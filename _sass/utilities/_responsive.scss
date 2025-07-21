@@ -3,13 +3,13 @@
 // Display utilities
 @each $breakpoint, $value in $breakpoints {
   @media (min-width: $value) {
-    .#{$breakpoint}\\:block { display: block !important; }
-    .#{$breakpoint}\\:inline-block { display: inline-block !important; }
-    .#{$breakpoint}\\:inline { display: inline !important; }
-    .#{$breakpoint}\\:flex { display: flex !important; }
-    .#{$breakpoint}\\:inline-flex { display: inline-flex !important; }
-    .#{$breakpoint}\\:grid { display: grid !important; }
-    .#{$breakpoint}\\:hidden { display: none !important; }
+    .#{$breakpoint}-block { display: block !important; }
+    .#{$breakpoint}-inline-block { display: inline-block !important; }
+    .#{$breakpoint}-inline { display: inline !important; }
+    .#{$breakpoint}-flex { display: flex !important; }
+    .#{$breakpoint}-inline-flex { display: inline-flex !important; }
+    .#{$breakpoint}-grid { display: grid !important; }
+    .#{$breakpoint}-hidden { display: none !important; }
   }
 }
 
@@ -25,10 +25,10 @@
 
 @each $breakpoint, $value in $breakpoints {
   @media (min-width: $value) {
-    .#{$breakpoint}\\:text-left { text-align: left !important; }
-    .#{$breakpoint}\\:text-center { text-align: center !important; }
-    .#{$breakpoint}\\:text-right { text-align: right !important; }
-    .#{$breakpoint}\\:text-justify { text-align: justify !important; }
+    .#{$breakpoint}-text-left { text-align: left !important; }
+    .#{$breakpoint}-text-center { text-align: center !important; }
+    .#{$breakpoint}-text-right { text-align: right !important; }
+    .#{$breakpoint}-text-justify { text-align: justify !important; }
   }
 }
 
