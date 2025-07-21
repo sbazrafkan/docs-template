@@ -9,32 +9,32 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: map-get($font-sizes, '4xl');
+  font-size: map-get($font-sizes, 'xxxxl');
   font-weight: map-get($font-weights, 'bold');
   letter-spacing: -0.025em;
   
   @media (min-width: map-get($breakpoints, 'md')) {
-    font-size: map-get($font-sizes, '5xl');
+    font-size: map-get($font-sizes, 'xxxxxl');
   }
 }
 
 h2 {
-  font-size: map-get($font-sizes, '3xl');
+  font-size: map-get($font-sizes, 'xxxl');
   font-weight: map-get($font-weights, 'bold');
   letter-spacing: -0.02em;
   margin-top: map-get($spacers, 8);
   
   @media (min-width: map-get($breakpoints, 'md')) {
-    font-size: map-get($font-sizes, '4xl');
+    font-size: map-get($font-sizes, 'xxxxl');
   }
 }
 
 h3 {
-  font-size: map-get($font-sizes, '2xl');
+  font-size: map-get($font-sizes, 'xxl');
   margin-top: map-get($spacers, 6);
   
   @media (min-width: map-get($breakpoints, 'md')) {
-    font-size: map-get($font-sizes, '3xl');
+    font-size: map-get($font-sizes, 'xxxl');
   }
 }
 
@@ -43,7 +43,7 @@ h4 {
   margin-top: map-get($spacers, 6);
   
   @media (min-width: map-get($breakpoints, 'md')) {
-    font-size: map-get($font-sizes, '2xl');
+    font-size: map-get($font-sizes, 'xxl');
   }
 }
 

@@ -4609,25 +4609,25 @@ body[data-palette="slate"] {
 }
 
 @media (min-width: 1536px) {
-  .2xl-block {
+  .xxl-block {
     display: block !important;
   }
-  .2xl-inline-block {
+  .xxl-inline-block {
     display: inline-block !important;
   }
-  .2xl-inline {
+  .xxl-inline {
     display: inline !important;
   }
-  .2xl-flex {
+  .xxl-flex {
     display: flex !important;
   }
-  .2xl-inline-flex {
+  .xxl-inline-flex {
     display: inline-flex !important;
   }
-  .2xl-grid {
+  .xxl-grid {
     display: grid !important;
   }
-  .2xl-hidden {
+  .xxl-hidden {
     display: none !important;
   }
 }
@@ -4717,16 +4717,16 @@ body[data-palette="slate"] {
 }
 
 @media (min-width: 1536px) {
-  .2xl-text-left {
+  .xxl-text-left {
     text-align: left !important;
   }
-  .2xl-text-center {
+  .xxl-text-center {
     text-align: center !important;
   }
-  .2xl-text-right {
+  .xxl-text-right {
     text-align: right !important;
   }
-  .2xl-text-justify {
+  .xxl-text-justify {
     text-align: justify !important;
   }
 }
@@ -5783,19 +5783,19 @@ body[data-palette="slate"] {
   font-size: 1.25rem !important;
 }
 
-.text-2xl {
+.text-xxl {
   font-size: 1.5rem !important;
 }
 
-.text-3xl {
+.text-xxxl {
   font-size: 1.875rem !important;
 }
 
-.text-4xl {
+.text-xxxxl {
   font-size: 2.25rem !important;
 }
 
-.text-5xl {
+.text-xxxxxl {
   font-size: 3rem !important;
 }
 
@@ -6015,3 +6015,5 @@ body[data-palette="slate"] {
     page-break-inside: avoid !important;
   }
 }
+
+/*# sourceMappingURL=main.css.map */
