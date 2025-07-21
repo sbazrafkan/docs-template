@@ -1,7 +1,8 @@
 // Color Palettes
+// Applied to body element for proper cascading
 
 // Blue (Default)
-[data-palette="blue"] {
+body[data-palette="blue"] {
   --color-primary-50: #eff6ff;
   --color-primary-100: #dbeafe;
   --color-primary-200: #bfdbfe;
@@ -15,7 +16,7 @@
 }
 
 // Purple
-[data-palette="purple"] {
+body[data-palette="purple"] {
   --color-primary-50: #faf5ff;
   --color-primary-100: #f3e8ff;
   --color-primary-200: #e9d5ff;
@@ -29,7 +30,7 @@
 }
 
 // Green
-[data-palette="green"] {
+body[data-palette="green"] {
   --color-primary-50: #f0fdf4;
   --color-primary-100: #dcfce7;
   --color-primary-200: #bbf7d0;
@@ -43,7 +44,7 @@
 }
 
 // Orange
-[data-palette="orange"] {
+body[data-palette="orange"] {
   --color-primary-50: #fff7ed;
   --color-primary-100: #ffedd5;
   --color-primary-200: #fed7aa;
@@ -57,7 +58,7 @@
 }
 
 // Red
-[data-palette="red"] {
+body[data-palette="red"] {
   --color-primary-50: #fef2f2;
   --color-primary-100: #fee2e2;
   --color-primary-200: #fecaca;
@@ -71,7 +72,7 @@
 }
 
 // Teal
-[data-palette="teal"] {
+body[data-palette="teal"] {
   --color-primary-50: #f0fdfa;
   --color-primary-100: #ccfbf1;
   --color-primary-200: #99f6e4;
@@ -85,7 +86,7 @@
 }
 
 // Pink
-[data-palette="pink"] {
+body[data-palette="pink"] {
   --color-primary-50: #fdf2f8;
   --color-primary-100: #fce7f3;
   --color-primary-200: #fbcfe8;
@@ -99,7 +100,7 @@
 }
 
 // Indigo
-[data-palette="indigo"] {
+body[data-palette="indigo"] {
   --color-primary-50: #eef2ff;
   --color-primary-100: #e0e7ff;
   --color-primary-200: #c7d2fe;
@@ -113,7 +114,7 @@
 }
 
 // Amber
-[data-palette="amber"] {
+body[data-palette="amber"] {
   --color-primary-50: #fffbeb;
   --color-primary-100: #fef3c7;
   --color-primary-200: #fde68a;
@@ -127,7 +128,7 @@
 }
 
 // Slate
-[data-palette="slate"] {
+body[data-palette="slate"] {
   --color-primary-50: #f8fafc;
   --color-primary-100: #f1f5f9;
   --color-primary-200: #e2e8f0;

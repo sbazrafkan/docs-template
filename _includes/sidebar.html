@@ -27,7 +27,16 @@
         <ul class="sidebar-submenu">
           {% for subsection in doc.subsections %}
             <li>
-              <a href="#{{ subsection.id }}" class="sidebar-link">{{ subsection.title }}</a>
+              <a href="{{ doc.url | relative_url }}#{{ subsection.id }}" class="sidebar-link">{{ subsection.title }}</a>
+              {% if subsection.subsubsections %}
+                <ul class="sidebar-submenu">
+                  {% for subsubsection in subsection.subsubsections %}
+                    <li>
+                      <a href="{{ doc.url | relative_url }}#{{ subsubsection.id }}" class="sidebar-link">{{ subsubsection.title }}</a>
+                    </li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
             </li>
           {% endfor %}
         </ul>

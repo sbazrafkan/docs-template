@@ -65,23 +65,27 @@
     const codeBlocks = document.querySelectorAll('pre');
     
     codeBlocks.forEach(function(block) {
-      // Wrap in container
-      const wrapper = document.createElement('div');
-      wrapper.className = 'code-block';
-      
-      // Get language from class
-      const codeElement = block.querySelector('code');
-      if (codeElement) {
-        const classList = codeElement.className.split(' ');
-        const langClass = classList.find(c => c.startsWith('language-'));
-        if (langClass) {
-          const lang = langClass.replace('language-', '');
-          wrapper.setAttribute('data-language', lang);
-        }
+      // Skip if this is inside a rouge-gutter (line numbers)
+      if (block.closest('.rouge-gutter')) {
+        return;
       }
       
-      block.parentNode.insertBefore(wrapper, block);
-      wrapper.appendChild(block);
+      // Skip if already has a copy button
+      if (block.parentElement && block.parentElement.querySelector('.code-copy-button')) {
+        return;
+      }
+      
+      // For Rouge highlighted code, only add button to the main container
+      const highlightContainer = block.closest('.highlight');
+      const rougeTable = block.closest('.rouge-table');
+      
+      // Skip if inside a table but not in the code column
+      if (rougeTable && !block.closest('.rouge-code')) {
+        return;
+      }
+      
+      // Determine where to add the button
+      let targetContainer = highlightContainer || block;
       
       // Add copy button
       const copyBtn = document.createElement('button');
@@ -90,10 +94,20 @@
       copyBtn.setAttribute('aria-label', 'Copy code');
       
       copyBtn.addEventListener('click', function() {
-        const code = block.querySelector('code');
-        const text = code ? code.textContent : block.textContent;
+        // Find the actual code content
+        let codeText = '';
         
-        navigator.clipboard.writeText(text).then(function() {
+        if (rougeTable) {
+          // For tables with line numbers, get only the code content
+          const codeCell = rougeTable.querySelector('.rouge-code code');
+          codeText = codeCell ? codeCell.textContent : '';
+        } else {
+          // For regular code blocks
+          const code = block.querySelector('code');
+          codeText = code ? code.textContent : block.textContent;
+        }
+        
+        navigator.clipboard.writeText(codeText).then(function() {
           copyBtn.textContent = 'Copied';
           copyBtn.classList.add('copied');
           
@@ -106,7 +120,19 @@
         });
       });
       
-      wrapper.appendChild(copyBtn);
+      // Add button to the appropriate container
+      if (highlightContainer) {
+        highlightContainer.style.position = 'relative';
+        highlightContainer.appendChild(copyBtn);
+      } else {
+        // Wrap the pre in a div if needed
+        const wrapper = document.createElement('div');
+        wrapper.className = 'code-block';
+        wrapper.style.position = 'relative';
+        block.parentNode.insertBefore(wrapper, block);
+        wrapper.appendChild(block);
+        wrapper.appendChild(copyBtn);
+      }
     });
   }
 
@@ -198,27 +224,65 @@
 
   // Smooth scroll for anchor links
   function initSmoothScroll() {
+    // Handle clicks on anchor links
     document.addEventListener('click', function(e) {
-      const link = e.target.closest('a[href^="#"]');
-      if (link) {
-        const targetId = link.getAttribute('href').slice(1);
+      const link = e.target.closest('a[href*="#"]');
+      if (!link) return;
+      
+      const href = link.getAttribute('href');
+      if (!href) return;
+      
+      // Handle both same-page anchors and cross-page anchors
+      const [path, hash] = href.split('#');
+      
+      if (hash) {
+        // If it's a same-page anchor or the path matches current page
+        if (!path || path === window.location.pathname || path === window.location.pathname + '/') {
+          e.preventDefault();
+          const target = document.getElementById(hash);
+          
+          if (target) {
+            const offset = 80; // Header height + padding
+            const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
+            
+            window.scrollTo({
+              top: targetPosition,
+              behavior: 'smooth'
+            });
+            
+            // Update URL
+            history.pushState(null, null, '#' + hash);
+          }
+        }
+        // For cross-page anchors, let the browser handle it normally
+      }
+    });
+    
+    // Handle page load with hash
+    function scrollToHash() {
+      if (window.location.hash) {
+        const targetId = window.location.hash.slice(1);
         const target = document.getElementById(targetId);
         
         if (target) {
-          e.preventDefault();
-          const offset = 80; // Header height + padding
-          const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
-          
-          window.scrollTo({
-            top: targetPosition,
-            behavior: 'smooth'
-          });
-          
-          // Update URL
-          history.pushState(null, null, '#' + targetId);
+          setTimeout(function() {
+            const offset = 80; // Header height + padding
+            const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
+            
+            window.scrollTo({
+              top: targetPosition,
+              behavior: 'smooth'
+            });
+          }, 100); // Small delay to ensure page layout is complete
         }
       }
-    });
+    }
+    
+    // Scroll to hash on page load
+    scrollToHash();
+    
+    // Also handle hash changes
+    window.addEventListener('hashchange', scrollToHash);
   }
 
   // Search modal

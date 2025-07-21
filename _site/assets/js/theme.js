@@ -27,16 +27,17 @@
 
   // Apply palette
   function applyPalette(palette) {
-    document.documentElement.setAttribute('data-palette', palette);
+    document.body.setAttribute('data-palette', palette);
     localStorage.setItem('palette', palette);
   }
 
-  // Initialize theme and palette
+  // Initialize theme immediately
   applyTheme(getSavedTheme());
-  applyPalette(getSavedPalette());
 
   // Theme toggle
   document.addEventListener('DOMContentLoaded', function() {
+    // Apply palette after DOM is ready
+    applyPalette(getSavedPalette());
     const themeToggle = document.querySelector('.theme-toggle');
     if (themeToggle) {
       themeToggle.addEventListener('click', function() {
