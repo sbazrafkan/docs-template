@@ -1,0 +1,146 @@
+// Background animations and effects
+
+// Subtle gradient animation for background
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+// Breathing effect for background
+@keyframes breathe {
+  0%, 100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+// Stronger breathing for dark mode
+@keyframes breatheDark {
+  0%, 100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+// Main background with animated gradient
+body {
+  position: relative;
+  background-color: var(--color-bg-palette, #ffffff);
+  transition: background-color 0.5s ease;
+  
+  // Create a subtle animated gradient overlay
+  &::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      135deg,
+      var(--color-bg-palette) 0%,
+      var(--color-bg-palette-secondary) 25%,
+      var(--color-bg-palette) 50%,
+      var(--color-bg-palette-secondary) 75%,
+      var(--color-bg-palette) 100%
+    );
+    background-size: 400% 400%;
+    animation: gradientShift 30s ease infinite;
+    pointer-events: none;
+    z-index: -1;
+  }
+  
+  // Additional subtle animated overlay
+  &::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(
+      ellipse at top left,
+      rgba(var(--color-primary-500-rgb), 0.03) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse at bottom right,
+      rgba(var(--color-primary-500-rgb), 0.03) 0%,
+      transparent 50%
+    );
+    animation: breathe 20s ease-in-out infinite;
+    pointer-events: none;
+    z-index: -1;
+  }
+  
+  // Dark mode adjustments
+  &[data-theme="dark"] {
+    background-color: var(--color-bg-palette-dark, #0f172a);
+    
+    &::before {
+      background: linear-gradient(
+        135deg,
+        var(--color-bg-palette-dark) 0%,
+        var(--color-bg-palette-dark-secondary) 25%,
+        var(--color-bg-palette-dark) 50%,
+        var(--color-bg-palette-dark-secondary) 75%,
+        var(--color-bg-palette-dark) 100%
+      );
+      animation: gradientShift 40s ease infinite; // Slower in dark mode
+    }
+    
+    &::after {
+      background: radial-gradient(
+        ellipse at top left,
+        rgba(var(--color-primary-500-rgb), 0.05) 0%,
+        transparent 60%
+      ),
+      radial-gradient(
+        ellipse at bottom right,
+        rgba(var(--color-primary-500-rgb), 0.05) 0%,
+        transparent 60%
+      );
+      animation: breatheDark 25s ease-in-out infinite; // Stronger effect in dark mode
+    }
+  }
+}
+
+// Ensure content stays above background animations
+.wrapper,
+.main-content,
+.sidebar,
+.header {
+  position: relative;
+  z-index: 1;
+}
+
+// Add subtle hover effect to cards that respond to palette
+.card {
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background: linear-gradient(
+      135deg,
+      var(--color-bg-secondary),
+      rgba(var(--color-primary-500-rgb), 0.02)
+    );
+  }
+  
+  [data-theme="dark"] & {
+    &:hover {
+      background: linear-gradient(
+        135deg,
+        var(--color-bg-secondary),
+        rgba(var(--color-primary-500-rgb), 0.05)
+      );
+    }
+  }
+}

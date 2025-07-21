@@ -339,7 +339,7 @@
     initCollapsibles();
     initCodeCopy();
     generateTOC();
-    initSmoothScroll();
+    // initSmoothScroll(); // Disabled - handled by simple-sidebar.js
     initSearch();
   });
 })();

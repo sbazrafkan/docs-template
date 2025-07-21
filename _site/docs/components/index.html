@@ -29,11 +29,11 @@
 <meta property="og:url" content="http://0.0.0.0:4000/docs/components/" />
 <meta property="og:site_name" content="Modern Documentation" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2025-07-21T09:12:17+00:00" />
+<meta property="article:published_time" content="2025-07-21T09:33:47+00:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Components Showcase" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-07-21T09:12:17+00:00","datePublished":"2025-07-21T09:12:17+00:00","description":"All available components with examples and usage","headline":"Components Showcase","mainEntityOfPage":{"@type":"WebPage","@id":"http://0.0.0.0:4000/docs/components/"},"url":"http://0.0.0.0:4000/docs/components/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-07-21T09:33:47+00:00","datePublished":"2025-07-21T09:33:47+00:00","description":"All available components with examples and usage","headline":"Components Showcase","mainEntityOfPage":{"@type":"WebPage","@id":"http://0.0.0.0:4000/docs/components/"},"url":"http://0.0.0.0:4000/docs/components/"}</script>
 <!-- End Jekyll SEO tag -->
 
 </head>
@@ -349,489 +349,209 @@
 
 <!-- Mobile sidebar -->
 <div class="sidebar-mobile" id="mobile-sidebar">
-  <div class="sidebar-content">
-    <h1 id="components-showcase">Components Showcase</h1>
-
-<p>This page demonstrates all the components available in the Modern Documentation Template.</p>
-
-<h2 id="typography">Typography</h2>
-
-<h3 id="headings">Headings</h3>
-
-<h1 id="heading-1">Heading 1</h1>
-<h2 id="heading-2">Heading 2</h2>
-<h3 id="heading-3">Heading 3</h3>
-<h4 id="heading-4">Heading 4</h4>
-<h5 id="heading-5">Heading 5</h5>
-<h6 id="heading-6">Heading 6</h6>
-
-<h3 id="text-styles">Text Styles</h3>
-
-<p><strong>Bold text</strong> and <em>italic text</em> and <strong><em>bold italic text</em></strong></p>
-
-<p><mark>Highlighted text</mark></p>
-
-<p><del>Strikethrough text</del></p>
-
-<p><u>Underlined text</u></p>
-
-<p><abbr title="Hypertext Markup Language">HTML</abbr></p>
-
-<blockquote>
-  <p>This is a blockquote. It can contain multiple lines and even other elements.</p>
-
-  <p>Like this second paragraph.</p>
-</blockquote>
-
-<h3 id="lead-paragraph">Lead Paragraph</h3>
-
-<p class="lead">This is a lead paragraph. It's slightly larger and stands out from regular text, perfect for introductions.</p>
-
-<h2 id="lists">Lists</h2>
-
-<h3 id="unordered-lists">Unordered Lists</h3>
-
-<p>Regular list:</p>
-<ul>
-  <li>First item</li>
-  <li>Second item
-    <ul>
-      <li>Nested item</li>
-      <li>Another nested item</li>
-    </ul>
-  </li>
-  <li>Third item</li>
-</ul>
-
-<p>Custom indicators:</p>
-
-<ul class="list-check">
-  <li>Completed task</li>
-  <li>Another completed task</li>
-  <li>Final completed task</li>
-</ul>
-
-<ul class="list-arrow">
-  <li>Step one</li>
-  <li>Step two</li>
-  <li>Step three</li>
-</ul>
-
-<ul class="list-star">
-  <li>Important point</li>
-  <li>Another important point</li>
-  <li>Critical information</li>
-</ul>
-
-<ul class="list-triangle">
-  <li>First point</li>
-  <li>Second point</li>
-  <li>Third point</li>
-</ul>
-
-<h3 id="ordered-lists">Ordered Lists</h3>
-
-<ol>
-  <li>First step</li>
-  <li>Second step
-    <ol>
-      <li>Sub-step A</li>
-      <li>Sub-step B</li>
-    </ol>
-  </li>
-  <li>Third step</li>
-</ol>
-
-<h3 id="task-lists">Task Lists</h3>
-
-<ul class="task-list">
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Completed task</li>
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Another completed task</li>
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Pending task</li>
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Future task</li>
-</ul>
-
-<h3 id="definition-lists">Definition Lists</h3>
-
-<dl>
-  <dt>Jekyll</dt>
-  <dd>A static site generator written in Ruby</dd>
-  <dt>Markdown</dt>
-  <dd>A lightweight markup language for creating formatted text</dd>
-  <dt>YAML</dt>
-  <dd>A human-readable data serialization language</dd>
-</dl>
-
-<h2 id="code-blocks">Code Blocks</h2>
-
-<h3 id="inline-code">Inline Code</h3>
-
-<p>Use <code class="language-plaintext highlighter-rouge">inline code</code> for short code snippets within text.</p>
-
-<h3 id="code-blocks-with-syntax-highlighting">Code Blocks with Syntax Highlighting</h3>
-
-<p>JavaScript:</p>
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-</pre></td><td class="rouge-code"><pre><span class="c1">// Function to calculate factorial</span>
-<span class="kd">function</span> <span class="nf">factorial</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">if </span><span class="p">(</span><span class="nx">n</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">)</span> <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
-  <span class="k">return</span> <span class="nx">n</span> <span class="o">*</span> <span class="nf">factorial</span><span class="p">(</span><span class="nx">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
-<span class="p">}</span>
-
-<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nf">factorial</span><span class="p">(</span><span class="mi">5</span><span class="p">));</span> <span class="c1">// Output: 120</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<p>Python:</p>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-</pre></td><td class="rouge-code"><pre><span class="c1"># Python example with classes
-</span><span class="k">class</span> <span class="nc">Calculator</span><span class="p">:</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
-        <span class="n">self</span><span class="p">.</span><span class="n">result</span> <span class="o">=</span> <span class="mi">0</span>
+  <nav class="sidebar-nav">
     
-    <span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
     
-    <span class="k">def</span> <span class="nf">multiply</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="n">y</span>
-
-<span class="n">calc</span> <span class="o">=</span> <span class="nc">Calculator</span><span class="p">()</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">calc</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<p>HTML:</p>
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-</pre></td><td class="rouge-code"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
-<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>
-<span class="nt">&lt;head&gt;</span>
-    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;title&gt;</span>Example Page<span class="nt">&lt;/title&gt;</span>
-<span class="nt">&lt;/head&gt;</span>
-<span class="nt">&lt;body&gt;</span>
-    <span class="nt">&lt;h1&gt;</span>Hello, World!<span class="nt">&lt;/h1&gt;</span>
-    <span class="nt">&lt;p&gt;</span>This is a paragraph.<span class="nt">&lt;/p&gt;</span>
-<span class="nt">&lt;/body&gt;</span>
-<span class="nt">&lt;/html&gt;</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<p>Shell:</p>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-</pre></td><td class="rouge-code"><pre><span class="c"># Install dependencies</span>
-npm <span class="nb">install</span>
-
-<span class="c"># Run development server</span>
-npm run dev
-
-<span class="c"># Build for production</span>
-npm run build
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<h2 id="tables">Tables</h2>
-
-<h3 id="basic-table">Basic Table</h3>
-
-<table>
-  <thead>
-    <tr>
-      <th>Feature</th>
-      <th>Description</th>
-      <th>Status</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Dark Mode</td>
-      <td>Automatic dark/light theme switching</td>
-      <td>✅ Completed</td>
-    </tr>
-    <tr>
-      <td>Search</td>
-      <td>Full-text search with fuzzy matching</td>
-      <td>✅ Completed</td>
-    </tr>
-    <tr>
-      <td>Responsive</td>
-      <td>Mobile-first responsive design</td>
-      <td>✅ Completed</td>
-    </tr>
-    <tr>
-      <td>Multi-language</td>
-      <td>Support for multiple languages</td>
-      <td>🚧 Planned</td>
-    </tr>
-  </tbody>
-</table>
-
-<h3 id="responsive-table">Responsive Table</h3>
-
-<div class="table-wrapper">
-  <table>
-    <thead>
-      <tr>
-        <th>Browser</th>
-        <th>Version</th>
-        <th>Support</th>
-        <th>Notes</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td data-label="Browser">Chrome</td>
-        <td data-label="Version">Latest 2</td>
-        <td data-label="Support"><span class="badge badge-success">Full</span></td>
-        <td data-label="Notes">Recommended browser</td>
-      </tr>
-      <tr>
-        <td data-label="Browser">Firefox</td>
-        <td data-label="Version">Latest 2</td>
-        <td data-label="Support"><span class="badge badge-success">Full</span></td>
-        <td data-label="Notes">Excellent support</td>
-      </tr>
-      <tr>
-        <td data-label="Browser">Safari</td>
-        <td data-label="Version">Latest 2</td>
-        <td data-label="Support"><span class="badge badge-success">Full</span></td>
-        <td data-label="Notes">Good support</td>
-      </tr>
-      <tr>
-        <td data-label="Browser">Edge</td>
-        <td data-label="Version">Latest 2</td>
-        <td data-label="Support"><span class="badge badge-success">Full</span></td>
-        <td data-label="Notes">Chromium-based</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
-<h2 id="buttons">Buttons</h2>
-
-<h3 id="button-styles">Button Styles</h3>
-
-<p><button class="btn btn-primary">Primary</button>
-<button class="btn btn-secondary">Secondary</button>
-<button class="btn btn-outline">Outline</button>
-<button class="btn btn-ghost">Ghost</button></p>
-
-<h3 id="button-sizes">Button Sizes</h3>
-
-<p><button class="btn btn-primary btn-sm">Small</button>
-<button class="btn btn-primary">Normal</button>
-<button class="btn btn-primary btn-lg">Large</button></p>
-
-<h3 id="button-states">Button States</h3>
-
-<p><button class="btn btn-primary" disabled="">Disabled</button>
-<button class="btn btn-primary btn-loading">Loading</button></p>
-
-<h3 id="button-group">Button Group</h3>
-
-<div class="btn-group">
-  <button class="btn btn-secondary">Left</button>
-  <button class="btn btn-secondary">Middle</button>
-  <button class="btn btn-secondary">Right</button>
-</div>
-
-<h2 id="tags">Tags</h2>
-
-<h3 id="basic-tags">Basic Tags</h3>
-
-<p><span class="tag">Default</span>
-<span class="tag tag-primary">Primary</span>
-<span class="tag tag-success">Success</span>
-<span class="tag tag-warning">Warning</span>
-<span class="tag tag-error">Error</span></p>
-
-<h3 id="tag-sizes">Tag Sizes</h3>
-
-<p><span class="tag tag-sm">Small</span>
-<span class="tag">Normal</span>
-<span class="tag tag-lg">Large</span></p>
-
-<h3 id="tag-group">Tag Group</h3>
-
-<div class="tag-group">
-  <span class="tag">JavaScript</span>
-  <span class="tag">Python</span>
-  <span class="tag">Ruby</span>
-  <span class="tag">Go</span>
-  <span class="tag">Rust</span>
-</div>
-
-<h2 id="steps">Steps</h2>
-
-<h3 id="vertical-steps">Vertical Steps</h3>
-
-<div class="steps">
-  <div class="step">
-    <div class="step-indicator completed">1</div>
-    <div class="step-connector completed"></div>
-    <div class="step-content">
-      <h3 class="step-title">Create Account</h3>
-      <p class="step-description">Sign up for a new account with your email address.</p>
+    
+    
+      
+        
+        
+        
+        
+        <div class="sidebar-section">
+          <h3 class="sidebar-section-title">Getting Started</h3>
+          <ul>
+      
+      
+      <li>
+        
+          <a href="/docs/getting-started/" class="sidebar-link">Getting Started</a>
+        
+        
+        
+          <ul class="sidebar-submenu">
+            
+              <li>
+                <a href="/docs/getting-started/#prerequisites" class="sidebar-link">Prerequisites</a>
+                
+              </li>
+            
+              <li>
+                <a href="/docs/getting-started/#installation" class="sidebar-link">Installation</a>
+                
+              </li>
+            
+              <li>
+                <a href="/docs/getting-started/#first-steps" class="sidebar-link">First Steps</a>
+                
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      
+        
+          </ul>
+        </div>
+        
+        
+        
+        
+        <div class="sidebar-section">
+          <h3 class="sidebar-section-title">Components</h3>
+          <ul>
+      
+      
+      <li>
+        
+          <a href="/docs/components/" class="sidebar-link active">Components Showcase</a>
+        
+        
+        
+          <ul class="sidebar-submenu">
+            
+              <li>
+                <a href="/docs/components/#typography" class="sidebar-link">Typography</a>
+                
+              </li>
+            
+              <li>
+                <a href="/docs/components/#lists" class="sidebar-link">Lists</a>
+                
+              </li>
+            
+              <li>
+                <a href="/docs/components/#code-blocks" class="sidebar-link">Code Blocks</a>
+                
+              </li>
+            
+              <li>
+                <a href="/docs/components/#tables" class="sidebar-link">Tables</a>
+                
+              </li>
+            
+              <li>
+                <a href="/docs/components/#buttons" class="sidebar-link">Buttons</a>
+                
+              </li>
+            
+              <li>
+                <a href="/docs/components/#tags" class="sidebar-link">Tags</a>
+                
+              </li>
+            
+              <li>
+                <a href="/docs/components/#steps" class="sidebar-link">Steps</a>
+                
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      
+        
+          </ul>
+        </div>
+        
+        
+        
+        
+        <div class="sidebar-section">
+          <h3 class="sidebar-section-title">Development</h3>
+          <ul>
+      
+      
+      <li>
+        
+          <a href="/docs/docker-development/" class="sidebar-link">Docker Development Guide</a>
+        
+        
+        
+          <ul class="sidebar-submenu">
+            
+              <li>
+                <a href="/docs/docker-development/#why-docker" class="sidebar-link">Why Docker?</a>
+                
+              </li>
+            
+              <li>
+                <a href="/docs/docker-development/#quick-start" class="sidebar-link">Quick Start</a>
+                
+              </li>
+            
+              <li>
+                <a href="/docs/docker-development/#docker-commands" class="sidebar-link">Docker Commands</a>
+                
+              </li>
+            
+              <li>
+                <a href="/docs/docker-development/#troubleshooting" class="sidebar-link">Troubleshooting</a>
+                
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      
+        
+          </ul>
+        </div>
+        
+        
+        
+        
+        <div class="sidebar-section">
+          <h3 class="sidebar-section-title">Customization</h3>
+          <ul>
+      
+      
+      <li>
+        
+          <a href="/docs/customization/" class="sidebar-link">Customization</a>
+        
+        
+        
+          <ul class="sidebar-submenu">
+            
+              <li>
+                <a href="/docs/customization/#color-palettes" class="sidebar-link">Color Palettes</a>
+                
+              </li>
+            
+              <li>
+                <a href="/docs/customization/#dark-mode" class="sidebar-link">Dark Mode</a>
+                
+              </li>
+            
+              <li>
+                <a href="/docs/customization/#custom-styles" class="sidebar-link">Custom Styles</a>
+                
+              </li>
+            
+              <li>
+                <a href="/docs/customization/#fonts" class="sidebar-link">Fonts</a>
+                
+              </li>
+            
+              <li>
+                <a href="/docs/customization/#layout-options" class="sidebar-link">Layout Options</a>
+                
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+    
+    
+      </ul>
     </div>
-  </div>
-  
-  <div class="step">
-    <div class="step-indicator active">2</div>
-    <div class="step-connector"></div>
-    <div class="step-content">
-      <h3 class="step-title">Verify Email</h3>
-      <p class="step-description">Check your inbox and click the verification link.</p>
-    </div>
-  </div>
-  
-  <div class="step">
-    <div class="step-indicator">3</div>
-    <div class="step-content">
-      <h3 class="step-title">Complete Profile</h3>
-      <p class="step-description">Add your details and preferences to complete setup.</p>
-    </div>
-  </div>
-</div>
-
-<h3 id="process-pipeline">Process Pipeline</h3>
-
-<div class="pipeline">
-  <div class="pipeline-item">
-    <div class="pipeline-title">Input</div>
-    <div class="pipeline-description">Raw data</div>
-  </div>
-  <div class="pipeline-item active">
-    <div class="pipeline-title">Process</div>
-    <div class="pipeline-description">Transform</div>
-  </div>
-  <div class="pipeline-item">
-    <div class="pipeline-title">Validate</div>
-    <div class="pipeline-description">Check quality</div>
-  </div>
-  <div class="pipeline-item">
-    <div class="pipeline-title">Output</div>
-    <div class="pipeline-description">Final result</div>
-  </div>
-</div>
-
-<h2 id="alerts">Alerts</h2>
-
-<div class="alert alert-info">
-  <strong>Info:</strong> This is an informational message with helpful details.
-</div>
-
-<div class="alert alert-success">
-  <strong>Success:</strong> The operation completed successfully!
-</div>
-
-<div class="alert alert-warning">
-  <strong>Warning:</strong> Please review this information carefully.
-</div>
-
-<div class="alert alert-error">
-  <strong>Error:</strong> Something went wrong. Please try again.
-</div>
-
-<h2 id="images">Images</h2>
-
-<h3 id="regular-image">Regular Image</h3>
-
-<p><img src="https://via.placeholder.com/800x400" alt="Placeholder Image" /></p>
-
-<h3 id="image-with-caption">Image with Caption</h3>
-
-<figure>
-  <img src="https://via.placeholder.com/800x400" alt="Placeholder" />
-  <figcaption>This is an image caption describing the image above.</figcaption>
-</figure>
-
-<h2 id="combined-examples">Combined Examples</h2>
-
-<h3 id="code-in-tables">Code in Tables</h3>
-
-<table>
-  <thead>
-    <tr>
-      <th>Method</th>
-      <th>Description</th>
-      <th>Example</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">GET</code></td>
-      <td>Retrieve data</td>
-      <td><code class="language-plaintext highlighter-rouge">fetch('/api/users')</code></td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">POST</code></td>
-      <td>Create new data</td>
-      <td><code class="language-plaintext highlighter-rouge">fetch('/api/users', { method: 'POST' })</code></td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">PUT</code></td>
-      <td>Update data</td>
-      <td><code class="language-plaintext highlighter-rouge">fetch('/api/users/1', { method: 'PUT' })</code></td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">DELETE</code></td>
-      <td>Remove data</td>
-      <td><code class="language-plaintext highlighter-rouge">fetch('/api/users/1', { method: 'DELETE' })</code></td>
-    </tr>
-  </tbody>
-</table>
-
-<h3 id="lists-with-code">Lists with Code</h3>
-
-<ol>
-  <li>Install the package:
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>npm <span class="nb">install </span>package-name
-</pre></td></tr></tbody></table></code></pre></div>    </div>
-  </li>
-  <li>Import in your code:
-    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre><span class="k">import</span> <span class="p">{</span> <span class="nx">feature</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">package-name</span><span class="dl">'</span><span class="p">;</span>
-</pre></td></tr></tbody></table></code></pre></div>    </div>
-  </li>
-  <li>Use the feature:
-    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre><span class="kd">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="nf">feature</span><span class="p">({</span> <span class="na">option</span><span class="p">:</span> <span class="kc">true</span> <span class="p">});</span>
-</pre></td></tr></tbody></table></code></pre></div>    </div>
-  </li>
-</ol>
-
-  </div>
+    
+  </nav>
 </div>
 <div class="sidebar-overlay" id="sidebar-overlay"></div>
         </nav>
@@ -1447,6 +1167,7 @@ npm run build
     <script src="https://unpkg.com/lunr/lunr.js"></script>
     <script src="/assets/js/search.js"></script>
     <script src="/assets/js/theme.js"></script>
+    <script src="/assets/js/simple-sidebar.js"></script>
     <script src="/assets/js/main.js"></script>
 </body>
 </html>

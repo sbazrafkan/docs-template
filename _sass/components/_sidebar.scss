@@ -69,8 +69,8 @@
     font-weight: map-get($font-weights, 'medium');
     
     [data-theme="dark"] & {
-      background-color: var(--color-primary-900);
-      opacity: 0.5;
+      color: var(--color-primary-300);
+      background-color: rgba(var(--color-primary-500-rgb), 0.25);
     }
     
     &::before {
