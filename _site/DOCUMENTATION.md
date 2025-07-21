@@ -553,7 +553,7 @@ Create reusable components in `_includes/`:
 Use in markdown:
 
 ```liquid
-{% include custom-alert.html type="warning" content="This is a warning!" %}
+{% raw %}{% include custom-alert.html type="warning" content="This is a warning!" %}{% endraw %}
 ```
 
 ### Analytics Integration
