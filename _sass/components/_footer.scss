@@ -1,0 +1,119 @@
+// Footer styles
+
+.site-footer {
+  background-color: var(--color-bg-secondary);
+  border-top: 1px solid var(--color-border);
+  margin-top: auto;
+  
+  .footer-container {
+    max-width: $container-max-width;
+    margin: 0 auto;
+    padding: map-get($spacers, 6) map-get($spacers, 4);
+    
+    @media (min-width: map-get($breakpoints, 'lg')) {
+      padding: map-get($spacers, 8) map-get($spacers, 6);
+    }
+  }
+  
+  .footer-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: map-get($spacers, 6);
+    
+    @media (min-width: map-get($breakpoints, 'md')) {
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+    }
+  }
+  
+  .footer-section {
+    h3 {
+      font-size: map-get($font-sizes, 'lg');
+      font-weight: map-get($font-weights, 'semibold');
+      margin-bottom: map-get($spacers, 3);
+      color: var(--color-text);
+    }
+    
+    p {
+      color: var(--color-text-secondary);
+      margin-bottom: map-get($spacers, 3);
+      line-height: 1.7;
+    }
+    
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      
+      li {
+        margin-bottom: map-get($spacers, 2);
+        
+        a {
+          color: var(--color-text-secondary);
+          font-size: map-get($font-sizes, 'sm');
+          
+          &:hover {
+            color: var(--color-primary-600);
+          }
+        }
+      }
+    }
+  }
+  
+  .footer-bottom {
+    margin-top: map-get($spacers, 6);
+    padding-top: map-get($spacers, 6);
+    border-top: 1px solid var(--color-border);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: map-get($spacers, 3);
+    
+    @media (min-width: map-get($breakpoints, 'md')) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    
+    p {
+      margin: 0;
+      color: var(--color-text-tertiary);
+      font-size: map-get($font-sizes, 'sm');
+    }
+  }
+  
+  .footer-links {
+    display: flex;
+    gap: map-get($spacers, 4);
+    
+    a {
+      color: var(--color-text-tertiary);
+      font-size: map-get($font-sizes, 'sm');
+      
+      &:hover {
+        color: var(--color-text-secondary);
+      }
+    }
+  }
+  
+  .footer-social {
+    display: flex;
+    gap: map-get($spacers, 3);
+    
+    a {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: $border-radius-full;
+      background-color: var(--color-bg);
+      color: var(--color-text-secondary);
+      transition: all $transition-fast;
+      
+      &:hover {
+        background-color: var(--color-primary-600);
+        color: white;
+        transform: translateY(-2px);
+      }
+    }
+  }
+}

@@ -1,0 +1,52 @@
+---
+layout: default
+---
+
+<div class="doc-wrapper">
+    {% if page.sidebar != false %}
+    <!-- Sidebar -->
+    <aside class="doc-sidebar">
+        <nav class="sidebar-nav">
+            {% include sidebar.html %}
+        </nav>
+    </aside>
+    {% endif %}
+    
+    <!-- Content -->
+    <article class="doc-content">
+        <!-- Breadcrumbs -->
+        {% include breadcrumbs.html %}
+        
+        <!-- Page Header -->
+        <header class="doc-header">
+            <h1 class="doc-title">{{ page.title }}</h1>
+            {% if page.description %}
+            <p class="doc-description">{{ page.description }}</p>
+            {% endif %}
+            
+            {% if page.tags %}
+            <div class="doc-tags">
+                {% for tag in page.tags %}
+                <span class="tag">{{ tag }}</span>
+                {% endfor %}
+            </div>
+            {% endif %}
+        </header>
+        
+        <!-- Table of Contents -->
+        {% if page.toc != false %}
+        <div class="doc-toc">
+            <h2 class="toc-title">On this page</h2>
+            <nav class="toc-nav" id="toc-nav"></nav>
+        </div>
+        {% endif %}
+        
+        <!-- Main Content -->
+        <div class="doc-body">
+            {{ content }}
+        </div>
+        
+        <!-- Page Navigation -->
+        {% include page-nav.html %}
+    </article>
+</div>

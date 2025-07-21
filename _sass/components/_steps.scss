@@ -1,0 +1,271 @@
+// Steps and process visualization styles
+
+.steps {
+  margin: map-get($spacers, 6) 0;
+  position: relative;
+  
+  // Vertical steps (default)
+  &:not(.steps-horizontal) {
+    .step {
+      display: flex;
+      position: relative;
+      margin-bottom: map-get($spacers, 6);
+      
+      &:last-child {
+        margin-bottom: 0;
+        
+        .step-connector {
+          display: none;
+        }
+      }
+    }
+    
+    .step-indicator {
+      flex-shrink: 0;
+      width: 48px;
+      height: 48px;
+      border-radius: $border-radius-full;
+      background-color: var(--color-bg-secondary);
+      border: 3px solid var(--color-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: map-get($font-weights, 'semibold');
+      color: var(--color-text-secondary);
+      position: relative;
+      z-index: 2;
+      transition: all $transition-base;
+      
+      &.active {
+        background-color: var(--color-primary-500);
+        border-color: var(--color-primary-500);
+        color: white;
+        transform: scale(1.1);
+        box-shadow: 0 0 0 4px var(--color-primary-200);
+      }
+      
+      &.completed {
+        background-color: var(--color-success);
+        border-color: var(--color-success);
+        color: white;
+        
+        .step-number {
+          display: none;
+        }
+        
+        &::after {
+          content: '✓';
+          font-size: map-get($font-sizes, 'xl');
+        }
+      }
+    }
+    
+    .step-connector {
+      position: absolute;
+      top: 48px;
+      left: 23px;
+      width: 2px;
+      height: calc(100% - 48px);
+      background-color: var(--color-border);
+      z-index: 1;
+      
+      &.completed {
+        background-color: var(--color-success);
+      }
+    }
+    
+    .step-content {
+      flex: 1;
+      padding-left: map-get($spacers, 4);
+      
+      .step-title {
+        font-size: map-get($font-sizes, 'lg');
+        font-weight: map-get($font-weights, 'semibold');
+        margin-bottom: map-get($spacers, 2);
+        color: var(--color-text);
+      }
+      
+      .step-description {
+        color: var(--color-text-secondary);
+        margin-bottom: map-get($spacers, 3);
+      }
+    }
+  }
+  
+  // Horizontal steps
+  &.steps-horizontal {
+    display: flex;
+    align-items: flex-start;
+    overflow-x: auto;
+    padding-bottom: map-get($spacers, 2);
+    
+    &::-webkit-scrollbar {
+      height: 6px;
+    }
+    
+    .step {
+      flex: 1;
+      min-width: 200px;
+      text-align: center;
+      position: relative;
+      
+      &:not(:last-child) {
+        &::after {
+          content: '';
+          position: absolute;
+          top: 24px;
+          left: calc(50% + 24px);
+          right: calc(-50% + 24px);
+          height: 2px;
+          background-color: var(--color-border);
+          z-index: 1;
+        }
+        
+        &.completed::after {
+          background-color: var(--color-success);
+        }
+      }
+    }
+    
+    .step-indicator {
+      width: 48px;
+      height: 48px;
+      margin: 0 auto map-get($spacers, 3);
+      border-radius: $border-radius-full;
+      background-color: var(--color-bg-secondary);
+      border: 3px solid var(--color-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: map-get($font-weights, 'semibold');
+      color: var(--color-text-secondary);
+      position: relative;
+      z-index: 2;
+      transition: all $transition-base;
+      
+      &.active {
+        background-color: var(--color-primary-500);
+        border-color: var(--color-primary-500);
+        color: white;
+        transform: scale(1.1);
+        box-shadow: 0 0 0 4px var(--color-primary-200);
+      }
+      
+      &.completed {
+        background-color: var(--color-success);
+        border-color: var(--color-success);
+        color: white;
+        
+        .step-number {
+          display: none;
+        }
+        
+        &::after {
+          content: '✓';
+          font-size: map-get($font-sizes, 'xl');
+        }
+      }
+    }
+    
+    .step-content {
+      .step-title {
+        font-size: map-get($font-sizes, 'base');
+        font-weight: map-get($font-weights, 'semibold');
+        margin-bottom: map-get($spacers, 1);
+        color: var(--color-text);
+      }
+      
+      .step-description {
+        font-size: map-get($font-sizes, 'sm');
+        color: var(--color-text-secondary);
+      }
+    }
+  }
+  
+  // Compact steps
+  &.steps-compact {
+    .step-indicator {
+      width: 32px;
+      height: 32px;
+      font-size: map-get($font-sizes, 'sm');
+    }
+    
+    &:not(.steps-horizontal) {
+      .step-connector {
+        top: 32px;
+        left: 15px;
+        height: calc(100% - 32px);
+      }
+    }
+    
+    &.steps-horizontal {
+      .step-indicator {
+        margin-bottom: map-get($spacers, 2);
+      }
+      
+      .step::after {
+        top: 16px;
+        left: calc(50% + 16px);
+        right: calc(-50% + 16px);
+      }
+    }
+  }
+}
+
+// Process pipeline visualization
+.pipeline {
+  display: flex;
+  align-items: center;
+  gap: map-get($spacers, 2);
+  margin: map-get($spacers, 6) 0;
+  overflow-x: auto;
+  padding: map-get($spacers, 4);
+  background-color: var(--color-bg-secondary);
+  border-radius: $border-radius-lg;
+  
+  .pipeline-item {
+    flex-shrink: 0;
+    padding: map-get($spacers, 3) map-get($spacers, 4);
+    background-color: var(--color-bg);
+    border: 2px solid var(--color-border);
+    border-radius: $border-radius;
+    position: relative;
+    transition: all $transition-base;
+    
+    &:hover {
+      border-color: var(--color-primary-500);
+      transform: translateY(-2px);
+      box-shadow: $shadow-md;
+    }
+    
+    &.active {
+      background-color: var(--color-primary-50);
+      border-color: var(--color-primary-500);
+      
+      [data-theme="dark"] & {
+        background-color: var(--color-primary-900);
+        opacity: 0.3;
+      }
+    }
+    
+    &:not(:last-child)::after {
+      content: '→';
+      position: absolute;
+      right: -1.5rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--color-text-tertiary);
+      font-size: map-get($font-sizes, 'xl');
+    }
+  }
+  
+  .pipeline-title {
+    font-weight: map-get($font-weights, 'semibold');
+    margin-bottom: map-get($spacers, 1);
+  }
+  
+  .pipeline-description {
+    font-size: map-get($font-sizes, 'sm');
+    color: var(--color-text-secondary);
+  }
+}

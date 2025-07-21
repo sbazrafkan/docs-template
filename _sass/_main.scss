@@ -1,0 +1,37 @@
+// Main SCSS file that imports all partials
+
+// Base
+@import "base/reset";
+@import "base/variables";
+@import "base/typography";
+@import "base/base";
+
+// Components
+@import "components/header";
+@import "components/footer";
+@import "components/sidebar";
+@import "components/search";
+@import "components/buttons";
+@import "components/tags";
+@import "components/code";
+@import "components/tables";
+@import "components/lists";
+@import "components/steps";
+@import "components/toc";
+@import "components/breadcrumbs";
+@import "components/page-nav";
+@import "components/alerts";
+
+// Layouts
+@import "layouts/default";
+@import "layouts/doc";
+@import "layouts/page";
+
+// Themes
+@import "themes/palettes";
+@import "themes/dark-mode";
+
+// Utilities
+@import "utilities/animations";
+@import "utilities/responsive";
+@import "utilities/helpers";

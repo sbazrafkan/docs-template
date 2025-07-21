@@ -1,0 +1,13 @@
+// Default layout styles
+
+.site-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.site-main {
+  flex: 1;
+  width: 100%;
+  padding-top: $header-height;
+}

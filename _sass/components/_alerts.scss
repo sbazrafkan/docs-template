@@ -1,0 +1,119 @@
+// Alert styles
+
+.alert {
+  padding: map-get($spacers, 4);
+  margin: map-get($spacers, 4) 0;
+  border-radius: $border-radius-lg;
+  border: 1px solid transparent;
+  position: relative;
+  
+  strong {
+    font-weight: map-get($font-weights, 'semibold');
+  }
+  
+  // Info alert
+  &.alert-info {
+    color: #0c5460;
+    background-color: #d1ecf1;
+    border-color: #bee5eb;
+    
+    [data-theme="dark"] & {
+      color: #79c0ff;
+      background-color: rgba(13, 110, 253, 0.15);
+      border-color: rgba(13, 110, 253, 0.25);
+    }
+  }
+  
+  // Success alert
+  &.alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    
+    [data-theme="dark"] & {
+      color: #75e887;
+      background-color: rgba(25, 135, 84, 0.15);
+      border-color: rgba(25, 135, 84, 0.25);
+    }
+  }
+  
+  // Warning alert
+  &.alert-warning {
+    color: #856404;
+    background-color: #fff3cd;
+    border-color: #ffeeba;
+    
+    [data-theme="dark"] & {
+      color: #ffda6a;
+      background-color: rgba(255, 193, 7, 0.15);
+      border-color: rgba(255, 193, 7, 0.25);
+    }
+  }
+  
+  // Error alert
+  &.alert-error {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    
+    [data-theme="dark"] & {
+      color: #ff8b94;
+      background-color: rgba(220, 53, 69, 0.15);
+      border-color: rgba(220, 53, 69, 0.25);
+    }
+  }
+  
+  // Alert with icon
+  &.alert-icon {
+    padding-left: map-get($spacers, 10);
+    
+    &::before {
+      position: absolute;
+      left: map-get($spacers, 4);
+      top: map-get($spacers, 4);
+      font-family: 'Font Awesome 5 Free';
+      font-weight: 900;
+      font-size: map-get($font-sizes, 'xl');
+    }
+    
+    &.alert-info::before {
+      content: '\f05a'; // info-circle
+    }
+    
+    &.alert-success::before {
+      content: '\f058'; // check-circle
+    }
+    
+    &.alert-warning::before {
+      content: '\f071'; // exclamation-triangle
+    }
+    
+    &.alert-error::before {
+      content: '\f057'; // times-circle
+    }
+  }
+  
+  // Dismissible alert
+  &.alert-dismissible {
+    padding-right: map-get($spacers, 10);
+    
+    .alert-dismiss {
+      position: absolute;
+      top: map-get($spacers, 4);
+      right: map-get($spacers, 4);
+      padding: 0;
+      background: none;
+      border: none;
+      font-size: map-get($font-sizes, 'xl');
+      line-height: 1;
+      color: inherit;
+      opacity: 0.5;
+      cursor: pointer;
+      transition: opacity $transition-fast;
+      
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+}

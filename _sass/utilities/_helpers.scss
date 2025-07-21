@@ -1,0 +1,118 @@
+// Helper utilities
+
+// Text utilities
+.text-uppercase { text-transform: uppercase !important; }
+.text-lowercase { text-transform: lowercase !important; }
+.text-capitalize { text-transform: capitalize !important; }
+.text-normal { text-transform: none !important; }
+
+.font-light { font-weight: map-get($font-weights, 'light') !important; }
+.font-normal { font-weight: map-get($font-weights, 'normal') !important; }
+.font-medium { font-weight: map-get($font-weights, 'medium') !important; }
+.font-semibold { font-weight: map-get($font-weights, 'semibold') !important; }
+.font-bold { font-weight: map-get($font-weights, 'bold') !important; }
+.font-extrabold { font-weight: map-get($font-weights, 'extrabold') !important; }
+
+.italic { font-style: italic !important; }
+.not-italic { font-style: normal !important; }
+
+// Text size utilities
+@each $name, $size in $font-sizes {
+  .text-#{$name} { font-size: $size !important; }
+}
+
+// Line height utilities
+.leading-none { line-height: 1 !important; }
+.leading-tight { line-height: 1.25 !important; }
+.leading-normal { line-height: 1.5 !important; }
+.leading-relaxed { line-height: 1.75 !important; }
+.leading-loose { line-height: 2 !important; }
+
+// Color utilities
+.text-primary { color: var(--color-primary-600) !important; }
+.text-secondary { color: var(--color-text-secondary) !important; }
+.text-tertiary { color: var(--color-text-tertiary) !important; }
+.text-success { color: var(--color-success) !important; }
+.text-warning { color: var(--color-warning) !important; }
+.text-error { color: var(--color-error) !important; }
+.text-info { color: var(--color-info) !important; }
+
+.bg-primary { background-color: var(--color-primary-600) !important; }
+.bg-secondary { background-color: var(--color-bg-secondary) !important; }
+.bg-tertiary { background-color: var(--color-bg-tertiary) !important; }
+.bg-success { background-color: var(--color-success) !important; }
+.bg-warning { background-color: var(--color-warning) !important; }
+.bg-error { background-color: var(--color-error) !important; }
+.bg-info { background-color: var(--color-info) !important; }
+
+// Border utilities
+.border { border: 1px solid var(--color-border) !important; }
+.border-2 { border: 2px solid var(--color-border) !important; }
+.border-t { border-top: 1px solid var(--color-border) !important; }
+.border-r { border-right: 1px solid var(--color-border) !important; }
+.border-b { border-bottom: 1px solid var(--color-border) !important; }
+.border-l { border-left: 1px solid var(--color-border) !important; }
+.border-none { border: none !important; }
+
+// Opacity utilities
+.opacity-0 { opacity: 0 !important; }
+.opacity-25 { opacity: 0.25 !important; }
+.opacity-50 { opacity: 0.5 !important; }
+.opacity-75 { opacity: 0.75 !important; }
+.opacity-100 { opacity: 1 !important; }
+
+// Cursor utilities
+.cursor-auto { cursor: auto !important; }
+.cursor-default { cursor: default !important; }
+.cursor-pointer { cursor: pointer !important; }
+.cursor-wait { cursor: wait !important; }
+.cursor-move { cursor: move !important; }
+.cursor-not-allowed { cursor: not-allowed !important; }
+
+// User select utilities
+.select-none { user-select: none !important; }
+.select-text { user-select: text !important; }
+.select-all { user-select: all !important; }
+.select-auto { user-select: auto !important; }
+
+// Truncate text
+.truncate {
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+}
+
+// Line clamp
+.line-clamp-1 {
+  overflow: hidden !important;
+  display: -webkit-box !important;
+  -webkit-box-orient: vertical !important;
+  -webkit-line-clamp: 1 !important;
+}
+
+.line-clamp-2 {
+  overflow: hidden !important;
+  display: -webkit-box !important;
+  -webkit-box-orient: vertical !important;
+  -webkit-line-clamp: 2 !important;
+}
+
+.line-clamp-3 {
+  overflow: hidden !important;
+  display: -webkit-box !important;
+  -webkit-box-orient: vertical !important;
+  -webkit-line-clamp: 3 !important;
+}
+
+// Aspect ratio utilities
+.aspect-square { aspect-ratio: 1 / 1 !important; }
+.aspect-video { aspect-ratio: 16 / 9 !important; }
+
+// Print utilities
+@media print {
+  .print-hidden { display: none !important; }
+  .print-block { display: block !important; }
+  .print-break-before { page-break-before: always !important; }
+  .print-break-after { page-break-after: always !important; }
+  .print-break-avoid { page-break-inside: avoid !important; }
+}

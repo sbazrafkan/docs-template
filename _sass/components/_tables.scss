@@ -1,0 +1,202 @@
+// Table styles
+
+.doc-body {
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: map-get($spacers, 6) 0;
+    font-size: map-get($font-sizes, 'sm');
+    background-color: var(--color-bg);
+    border-radius: $border-radius-lg;
+    overflow: hidden;
+    box-shadow: $shadow;
+    
+    @media (max-width: map-get($breakpoints, 'md')) {
+      font-size: map-get($font-sizes, 'xs');
+    }
+  }
+  
+  // Table wrapper for overflow
+  .table-wrapper {
+    overflow-x: auto;
+    margin: map-get($spacers, 6) 0;
+    border-radius: $border-radius-lg;
+    border: 1px solid var(--color-border);
+    
+    table {
+      margin: 0;
+      box-shadow: none;
+      border-radius: 0;
+    }
+    
+    &::-webkit-scrollbar {
+      height: 8px;
+    }
+  }
+  
+  thead {
+    background-color: var(--color-bg-secondary);
+    border-bottom: 2px solid var(--color-border);
+    
+    th {
+      padding: map-get($spacers, 3) map-get($spacers, 4);
+      font-weight: map-get($font-weights, 'semibold');
+      text-align: left;
+      color: var(--color-text);
+      white-space: nowrap;
+      
+      &:first-child {
+        border-top-left-radius: $border-radius-lg;
+      }
+      
+      &:last-child {
+        border-top-right-radius: $border-radius-lg;
+      }
+    }
+  }
+  
+  tbody {
+    tr {
+      border-bottom: 1px solid var(--color-border);
+      transition: background-color $transition-fast;
+      
+      &:hover {
+        background-color: var(--color-bg-secondary);
+      }
+      
+      &:last-child {
+        border-bottom: none;
+        
+        td:first-child {
+          border-bottom-left-radius: $border-radius-lg;
+        }
+        
+        td:last-child {
+          border-bottom-right-radius: $border-radius-lg;
+        }
+      }
+    }
+    
+    td {
+      padding: map-get($spacers, 3) map-get($spacers, 4);
+      color: var(--color-text-secondary);
+      
+      &:first-child {
+        font-weight: map-get($font-weights, 'medium');
+        color: var(--color-text);
+      }
+    }
+  }
+  
+  // Striped table
+  .table-striped {
+    tbody tr:nth-child(odd) {
+      background-color: var(--color-bg-secondary);
+    }
+  }
+  
+  // Compact table
+  .table-compact {
+    font-size: map-get($font-sizes, 'xs');
+    
+    thead th,
+    tbody td {
+      padding: map-get($spacers, 2) map-get($spacers, 3);
+    }
+  }
+  
+  // Bordered table
+  .table-bordered {
+    border: 1px solid var(--color-border);
+    
+    thead th,
+    tbody td {
+      border: 1px solid var(--color-border);
+    }
+  }
+  
+  // Responsive table
+  @media (max-width: map-get($breakpoints, 'md')) {
+    .table-responsive {
+      thead {
+        display: none;
+      }
+      
+      tbody {
+        tr {
+          display: block;
+          margin-bottom: map-get($spacers, 3);
+          border: 1px solid var(--color-border);
+          border-radius: $border-radius;
+          padding: map-get($spacers, 3);
+          
+          &:hover {
+            background-color: transparent;
+            border-color: var(--color-primary-500);
+          }
+        }
+        
+        td {
+          display: block;
+          padding: map-get($spacers, 2) 0;
+          border: none;
+          
+          &::before {
+            content: attr(data-label);
+            display: block;
+            font-weight: map-get($font-weights, 'semibold');
+            color: var(--color-text);
+            margin-bottom: map-get($spacers, 1);
+          }
+          
+          &:first-child {
+            padding-top: 0;
+          }
+          
+          &:last-child {
+            padding-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+  
+  // Code in tables
+  table code {
+    font-size: 0.9em;
+  }
+  
+  // Links in tables
+  table a {
+    font-weight: map-get($font-weights, 'medium');
+  }
+  
+  // Status badges in tables
+  .badge {
+    display: inline-block;
+    padding: 0.125em 0.5em;
+    font-size: 0.875em;
+    font-weight: map-get($font-weights, 'medium');
+    border-radius: $border-radius-full;
+    
+    &.badge-success {
+      background-color: var(--color-success);
+      color: white;
+    }
+    
+    &.badge-warning {
+      background-color: var(--color-warning);
+      color: white;
+    }
+    
+    &.badge-error {
+      background-color: var(--color-error);
+      color: white;
+    }
+    
+    &.badge-info {
+      background-color: var(--color-info);
+      color: white;
+    }
+  }
+}

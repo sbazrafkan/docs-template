@@ -1,0 +1,199 @@
+// Documentation layout styles
+
+.doc-wrapper {
+  display: flex;
+  gap: map-get($spacers, 8);
+  max-width: $container-max-width;
+  margin: 0 auto;
+  padding: map-get($spacers, 6) map-get($spacers, 4);
+  
+  @media (min-width: map-get($breakpoints, 'lg')) {
+    padding: map-get($spacers, 8) map-get($spacers, 6);
+  }
+}
+
+.doc-content {
+  flex: 1;
+  min-width: 0; // Prevent overflow
+  max-width: 100%;
+  
+  @media (min-width: map-get($breakpoints, 'lg')) {
+    max-width: calc(100% - #{$sidebar-width} - #{map-get($spacers, 8)});
+  }
+}
+
+.doc-header {
+  margin-bottom: map-get($spacers, 8);
+  padding-bottom: map-get($spacers, 6);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.doc-title {
+  margin-bottom: map-get($spacers, 3);
+}
+
+.doc-description {
+  font-size: map-get($font-sizes, 'lg');
+  color: var(--color-text-secondary);
+  margin-bottom: map-get($spacers, 4);
+}
+
+.doc-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: map-get($spacers, 2);
+}
+
+// Table of Contents
+.doc-toc {
+  margin-bottom: map-get($spacers, 8);
+  padding: map-get($spacers, 4);
+  background-color: var(--color-bg-secondary);
+  border-radius: $border-radius-lg;
+  border: 1px solid var(--color-border);
+  
+  @media (min-width: map-get($breakpoints, 'xl')) {
+    float: right;
+    width: 280px;
+    margin-left: map-get($spacers, 6);
+    margin-bottom: map-get($spacers, 4);
+    position: sticky;
+    top: calc($header-height + map-get($spacers, 4));
+  }
+  
+  .toc-title {
+    font-size: map-get($font-sizes, 'sm');
+    font-weight: map-get($font-weights, 'semibold');
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-tertiary);
+    margin-bottom: map-get($spacers, 3);
+  }
+  
+  .toc-nav {
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    
+    li {
+      margin-bottom: map-get($spacers, 1);
+      
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    
+    a {
+      display: block;
+      padding: map-get($spacers, 1) map-get($spacers, 2);
+      font-size: map-get($font-sizes, 'sm');
+      color: var(--color-text-secondary);
+      border-radius: $border-radius-sm;
+      transition: all $transition-fast;
+      
+      &:hover {
+        color: var(--color-text);
+        background-color: var(--color-bg-tertiary);
+      }
+      
+      &.active {
+        color: var(--color-primary-600);
+        font-weight: map-get($font-weights, 'medium');
+      }
+    }
+    
+    // Nested levels
+    ul ul {
+      margin-left: map-get($spacers, 3);
+      margin-top: map-get($spacers, 1);
+      
+      a {
+        font-size: map-get($font-sizes, 'xs');
+      }
+    }
+  }
+}
+
+// Content body
+.doc-body {
+  > * {
+    margin-bottom: map-get($spacers, 4);
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  
+  // Headings with anchor links
+  h2, h3, h4, h5, h6 {
+    position: relative;
+    scroll-margin-top: calc($header-height + map-get($spacers, 4));
+    
+    &:hover .heading-anchor {
+      opacity: 1;
+    }
+  }
+  
+  .heading-anchor {
+    position: absolute;
+    left: -1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--color-text-tertiary);
+    font-size: map-get($font-sizes, 'lg');
+    opacity: 0;
+    transition: opacity $transition-fast;
+    
+    &:hover {
+      color: var(--color-primary-600);
+    }
+    
+    @media (max-width: map-get($breakpoints, 'md')) {
+      display: none;
+    }
+  }
+  
+  // Images
+  img {
+    margin: map-get($spacers, 6) 0;
+    border: 1px solid var(--color-border);
+    border-radius: $border-radius-lg;
+    box-shadow: $shadow-md;
+  }
+  
+  // Tables
+  table {
+    margin: map-get($spacers, 6) 0;
+  }
+  
+  // Lists
+  ul, ol {
+    margin: map-get($spacers, 4) 0;
+    padding-left: map-get($spacers, 6);
+  }
+  
+  // Nested lists
+  li ul,
+  li ol {
+    margin-top: map-get($spacers, 2);
+    margin-bottom: map-get($spacers, 2);
+  }
+  
+  // Definition lists
+  dl {
+    margin: map-get($spacers, 4) 0;
+    
+    dt {
+      font-weight: map-get($font-weights, 'semibold');
+      margin-bottom: map-get($spacers, 1);
+    }
+    
+    dd {
+      margin-left: map-get($spacers, 6);
+      margin-bottom: map-get($spacers, 3);
+      color: var(--color-text-secondary);
+    }
+  }
+}

@@ -1,0 +1,77 @@
+# Site settings
+title: Modern Documentation
+description: A beautiful, modern documentation template for GitHub Pages
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: 'highlight'
+    block:
+      line_numbers: true
+
+# Collections
+collections:
+  docs:
+    output: true
+    permalink: /:collection/:path/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "docs"
+    values:
+      layout: "doc"
+      sidebar: true
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - claude_steps/
+
+# Plugins
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Sass/SCSS settings
+sass:
+  sass_dir: _sass
+  style: compressed
+  load_paths:
+    - _sass
+  sourcemap: development
+
+# Theme settings
+theme_color: "blue" # default theme
+enable_dark_mode: true
+enable_search: true
+enable_tags: true
+
+# Navigation
+navigation:
+  - title: Home
+    url: /
+  - title: Documentation
+    url: /docs/
+  - title: Getting Started
+    url: /docs/getting-started/
+  - title: Docker Guide
+    url: /docs/docker-development/

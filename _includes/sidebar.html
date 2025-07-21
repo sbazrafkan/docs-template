@@ -1,0 +1,50 @@
+{% assign docs = site.docs | sort: 'order' %}
+{% assign current_section = "" %}
+
+<div class="sidebar-content">
+  {% for doc in docs %}
+    {% if doc.section != current_section %}
+      {% if current_section != "" %}
+        </ul>
+      </div>
+      {% endif %}
+      
+      {% assign current_section = doc.section %}
+      
+      <div class="sidebar-section">
+        <h3 class="sidebar-section-title">{{ current_section }}</h3>
+        <ul>
+    {% endif %}
+    
+    <li>
+      {% if doc.url == page.url %}
+        <a href="{{ doc.url | relative_url }}" class="sidebar-link active">{{ doc.nav_title | default: doc.title }}</a>
+      {% else %}
+        <a href="{{ doc.url | relative_url }}" class="sidebar-link">{{ doc.nav_title | default: doc.title }}</a>
+      {% endif %}
+      
+      {% if doc.subsections %}
+        <ul class="sidebar-submenu">
+          {% for subsection in doc.subsections %}
+            <li>
+              <a href="#{{ subsection.id }}" class="sidebar-link">{{ subsection.title }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </li>
+  {% endfor %}
+  
+  {% if current_section != "" %}
+    </ul>
+  </div>
+  {% endif %}
+</div>
+
+<!-- Mobile sidebar -->
+<div class="sidebar-mobile" id="mobile-sidebar">
+  <div class="sidebar-content">
+    {{ content }}
+  </div>
+</div>
+<div class="sidebar-overlay" id="sidebar-overlay"></div>

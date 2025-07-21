@@ -1,0 +1,186 @@
+// Sidebar styles
+
+.doc-sidebar {
+  position: sticky;
+  top: calc($header-height + map-get($spacers, 4));
+  height: calc(100vh - $header-height - map-get($spacers, 8));
+  width: $sidebar-width;
+  overflow-y: auto;
+  padding-right: map-get($spacers, 4);
+  
+  @media (max-width: map-get($breakpoints, 'lg')) {
+    display: none;
+  }
+  
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+}
+
+.sidebar-nav {
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  > ul {
+    padding-bottom: map-get($spacers, 8);
+  }
+}
+
+// Section
+.sidebar-section {
+  margin-bottom: map-get($spacers, 6);
+  
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.sidebar-section-title {
+  font-size: map-get($font-sizes, 'sm');
+  font-weight: map-get($font-weights, 'semibold');
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-tertiary);
+  margin-bottom: map-get($spacers, 2);
+  padding: map-get($spacers, 2) 0;
+}
+
+// Links
+.sidebar-link {
+  display: block;
+  padding: map-get($spacers, 2) map-get($spacers, 3);
+  color: var(--color-text-secondary);
+  font-size: map-get($font-sizes, 'sm');
+  border-radius: $border-radius;
+  transition: all $transition-fast;
+  position: relative;
+  
+  &:hover {
+    color: var(--color-text);
+    background-color: var(--color-bg-secondary);
+  }
+  
+  &.active {
+    color: var(--color-primary-600);
+    background-color: var(--color-primary-50);
+    font-weight: map-get($font-weights, 'medium');
+    
+    [data-theme="dark"] & {
+      background-color: var(--color-primary-900);
+      opacity: 0.5;
+    }
+    
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 3px;
+      height: 20px;
+      background-color: var(--color-primary-600);
+      border-radius: 0 $border-radius-full $border-radius-full 0;
+    }
+  }
+}
+
+// Nested items
+.sidebar-submenu {
+  margin-left: map-get($spacers, 4);
+  margin-top: map-get($spacers, 1);
+  
+  .sidebar-link {
+    font-size: map-get($font-sizes, 'xs');
+    padding: map-get($spacers, 1) map-get($spacers, 3);
+  }
+}
+
+// Collapsible sections
+.sidebar-collapsible {
+  .sidebar-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: map-get($spacers, 2) map-get($spacers, 3);
+    color: var(--color-text-secondary);
+    font-size: map-get($font-sizes, 'sm');
+    font-weight: map-get($font-weights, 'medium');
+    border-radius: $border-radius;
+    transition: all $transition-fast;
+    
+    &:hover {
+      color: var(--color-text);
+      background-color: var(--color-bg-secondary);
+    }
+    
+    &::after {
+      content: '';
+      width: 0;
+      height: 0;
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+      border-top: 6px solid currentColor;
+      transition: transform $transition-fast;
+    }
+    
+    &[aria-expanded="true"]::after {
+      transform: rotate(180deg);
+    }
+  }
+  
+  .sidebar-collapse {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height $transition-base;
+    
+    &.show {
+      max-height: 500px;
+    }
+  }
+}
+
+// Mobile sidebar (overlay)
+.sidebar-mobile {
+  position: fixed;
+  top: $header-height;
+  left: 0;
+  bottom: 0;
+  width: 280px;
+  background-color: var(--color-bg);
+  border-right: 1px solid var(--color-border);
+  padding: map-get($spacers, 4);
+  overflow-y: auto;
+  transform: translateX(-100%);
+  transition: transform $transition-base;
+  z-index: map-get($z-index, 'fixed');
+  
+  @media (min-width: map-get($breakpoints, 'lg')) {
+    display: none;
+  }
+  
+  &.active {
+    transform: translateX(0);
+  }
+}
+
+.sidebar-overlay {
+  position: fixed;
+  top: $header-height;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: all $transition-base;
+  z-index: map-get($z-index, 'modal-backdrop');
+  
+  &.active {
+    opacity: 1;
+    visibility: visible;
+  }
+}

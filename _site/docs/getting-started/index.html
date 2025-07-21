@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getting Started | Modern Documentation</title>
+    <meta name="description" content="Quick start guide to get your documentation site up and running">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- SEO -->
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Getting Started | Modern Documentation</title>
+<meta name="generator" content="Jekyll v4.3.4" />
+<meta property="og:title" content="Getting Started" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Quick start guide to get your documentation site up and running" />
+<meta property="og:description" content="Quick start guide to get your documentation site up and running" />
+<link rel="canonical" href="http://0.0.0.0:4000/docs/getting-started/" />
+<meta property="og:url" content="http://0.0.0.0:4000/docs/getting-started/" />
+<meta property="og:site_name" content="Modern Documentation" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-07-21T07:03:21+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Getting Started" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-07-21T07:03:21+00:00","datePublished":"2025-07-21T07:03:21+00:00","description":"Quick start guide to get your documentation site up and running","headline":"Getting Started","mainEntityOfPage":{"@type":"WebPage","@id":"http://0.0.0.0:4000/docs/getting-started/"},"url":"http://0.0.0.0:4000/docs/getting-started/"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+<body>
+    <div class="site-wrapper">
+        <!-- Header -->
+        <header class="site-header">
+            <div class="header-container">
+                <div class="site-logo">
+                    <a href="/">Modern Documentation</a>
+                </div>
+                
+                <nav class="site-nav">
+                    <ul class="nav-list">
+                        
+                        <li><a href="/" >Home</a></li>
+                        
+                        <li><a href="/docs/" >Documentation</a></li>
+                        
+                        <li><a href="/docs/getting-started/" class="active">Getting Started</a></li>
+                        
+                        <li><a href="/docs/docker-development/" >Docker Guide</a></li>
+                        
+                    </ul>
+                </nav>
+                
+                <div class="header-actions">
+                    <!-- Search Toggle -->
+                    <button class="search-toggle" aria-label="Toggle search">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    
+                    <!-- Theme Toggle -->
+                    <button class="theme-toggle" aria-label="Toggle theme">
+                        <i class="fas fa-sun theme-icon-light"></i>
+                        <i class="fas fa-moon theme-icon-dark"></i>
+                    </button>
+                    
+                    <!-- Color Palette Selector -->
+                    <div class="palette-selector">
+                        <button class="palette-toggle" aria-label="Select color palette">
+                            <i class="fas fa-palette"></i>
+                        </button>
+                        <div class="palette-dropdown">
+                            <div class="palette-grid">
+                                <button class="palette-option" data-palette="blue" aria-label="Blue theme">
+                                    <span class="palette-preview palette-blue"></span>
+                                </button>
+                                <button class="palette-option" data-palette="purple" aria-label="Purple theme">
+                                    <span class="palette-preview palette-purple"></span>
+                                </button>
+                                <button class="palette-option" data-palette="green" aria-label="Green theme">
+                                    <span class="palette-preview palette-green"></span>
+                                </button>
+                                <button class="palette-option" data-palette="orange" aria-label="Orange theme">
+                                    <span class="palette-preview palette-orange"></span>
+                                </button>
+                                <button class="palette-option" data-palette="red" aria-label="Red theme">
+                                    <span class="palette-preview palette-red"></span>
+                                </button>
+                                <button class="palette-option" data-palette="teal" aria-label="Teal theme">
+                                    <span class="palette-preview palette-teal"></span>
+                                </button>
+                                <button class="palette-option" data-palette="pink" aria-label="Pink theme">
+                                    <span class="palette-preview palette-pink"></span>
+                                </button>
+                                <button class="palette-option" data-palette="indigo" aria-label="Indigo theme">
+                                    <span class="palette-preview palette-indigo"></span>
+                                </button>
+                                <button class="palette-option" data-palette="amber" aria-label="Amber theme">
+                                    <span class="palette-preview palette-amber"></span>
+                                </button>
+                                <button class="palette-option" data-palette="slate" aria-label="Slate theme">
+                                    <span class="palette-preview palette-slate"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Mobile Menu Toggle -->
+                    <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </header>
+        
+        <!-- Search Modal -->
+        <div class="search-modal">
+            <div class="search-container">
+                <div class="search-header">
+                    <input type="search" class="search-input" placeholder="Search documentation..." id="search-input">
+                    <button class="search-close" aria-label="Close search">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="search-results" id="search-results"></div>
+            </div>
+        </div>
+        
+        <!-- Main Content -->
+        <main class="site-main">
+            <div class="doc-wrapper">
+    
+    <!-- Sidebar -->
+    <aside class="doc-sidebar">
+        <nav class="sidebar-nav">
+            
+
+
+<div class="sidebar-content">
+  
+    
+      
+      
+      
+      
+      <div class="sidebar-section">
+        <h3 class="sidebar-section-title">Getting Started</h3>
+        <ul>
+    
+    
+    <li>
+      
+        <a href="/docs/getting-started/" class="sidebar-link active">Getting Started</a>
+      
+      
+      
+        <ul class="sidebar-submenu">
+          
+            <li>
+              <a href="#prerequisites" class="sidebar-link">Prerequisites</a>
+            </li>
+          
+            <li>
+              <a href="#installation" class="sidebar-link">Installation</a>
+            </li>
+          
+            <li>
+              <a href="#first-steps" class="sidebar-link">First Steps</a>
+            </li>
+          
+        </ul>
+      
+    </li>
+  
+    
+      
+        </ul>
+      </div>
+      
+      
+      
+      
+      <div class="sidebar-section">
+        <h3 class="sidebar-section-title">Components</h3>
+        <ul>
+    
+    
+    <li>
+      
+        <a href="/docs/components/" class="sidebar-link">Components Showcase</a>
+      
+      
+      
+        <ul class="sidebar-submenu">
+          
+            <li>
+              <a href="#typography" class="sidebar-link">Typography</a>
+            </li>
+          
+            <li>
+              <a href="#lists" class="sidebar-link">Lists</a>
+            </li>
+          
+            <li>
+              <a href="#code-blocks" class="sidebar-link">Code Blocks</a>
+            </li>
+          
+            <li>
+              <a href="#tables" class="sidebar-link">Tables</a>
+            </li>
+          
+            <li>
+              <a href="#buttons" class="sidebar-link">Buttons</a>
+            </li>
+          
+            <li>
+              <a href="#tags" class="sidebar-link">Tags</a>
+            </li>
+          
+            <li>
+              <a href="#steps" class="sidebar-link">Steps</a>
+            </li>
+          
+        </ul>
+      
+    </li>
+  
+    
+      
+        </ul>
+      </div>
+      
+      
+      
+      
+      <div class="sidebar-section">
+        <h3 class="sidebar-section-title">Development</h3>
+        <ul>
+    
+    
+    <li>
+      
+        <a href="/docs/docker-development/" class="sidebar-link">Docker Development Guide</a>
+      
+      
+      
+        <ul class="sidebar-submenu">
+          
+            <li>
+              <a href="#why-docker" class="sidebar-link">Why Docker?</a>
+            </li>
+          
+            <li>
+              <a href="#quick-start" class="sidebar-link">Quick Start</a>
+            </li>
+          
+            <li>
+              <a href="#docker-commands" class="sidebar-link">Docker Commands</a>
+            </li>
+          
+            <li>
+              <a href="#troubleshooting" class="sidebar-link">Troubleshooting</a>
+            </li>
+          
+        </ul>
+      
+    </li>
+  
+  
+  
+    </ul>
+  </div>
+  
+</div>
+
+<!-- Mobile sidebar -->
+<div class="sidebar-mobile" id="mobile-sidebar">
+  <div class="sidebar-content">
+    <h1 id="getting-started">Getting Started</h1>
+
+<p>Welcome to the Modern Documentation Template! This guide will help you get your documentation site up and running in just a few minutes.</p>
+
+<h2 id="prerequisites">Prerequisites</h2>
+
+<p>Before you begin, make sure you have:</p>
+
+<ul class="list-check">
+  <li>A GitHub account</li>
+  <li>Basic knowledge of Markdown</li>
+  <li>A text editor (VS Code, Sublime Text, etc.)</li>
+</ul>
+
+<p>For local development (optional):</p>
+<ul>
+  <li>Ruby 2.5.0 or higher</li>
+  <li>RubyGems</li>
+  <li>GCC and Make</li>
+</ul>
+
+<h2 id="installation">Installation</h2>
+
+<h3 id="method-1-using-github-pages-recommended">Method 1: Using GitHub Pages (Recommended)</h3>
+
+<div class="steps">
+  <div class="step">
+    <div class="step-indicator">1</div>
+    <div class="step-connector"></div>
+    <div class="step-content">
+      <h3 class="step-title">Fork the Repository</h3>
+      <p class="step-description">Click the "Fork" button on the repository page to create your own copy.</p>
+    </div>
+  </div>
+  
+  <div class="step">
+    <div class="step-indicator">2</div>
+    <div class="step-connector"></div>
+    <div class="step-content">
+      <h3 class="step-title">Enable GitHub Pages</h3>
+      <p class="step-description">Go to Settings → Pages and configure the source branch.</p>
+    </div>
+  </div>
+  
+  <div class="step">
+    <div class="step-indicator">3</div>
+    <div class="step-content">
+      <h3 class="step-title">Access Your Site</h3>
+      <p class="step-description">Your site will be available at https://[username].github.io/[repository-name]/</p>
+    </div>
+  </div>
+</div>
+
+<h3 id="method-2-local-development-with-docker-recommended">Method 2: Local Development with Docker (Recommended)</h3>
+
+<p><strong>No installation required!</strong> Use Docker for a clean development environment:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="rouge-code"><pre><span class="c"># Clone your fork</span>
+git clone https://github.com/yourusername/docs-template.git
+<span class="nb">cd </span>docs-template
+
+<span class="c"># Start with Docker Compose</span>
+docker-compose up
+
+<span class="c"># Open http://localhost:4000 in your browser</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<div class="alert alert-info">
+  <strong>Why Docker?</strong> No need to install Ruby, Jekyll, or any dependencies. Everything runs in an isolated container, keeping your system clean.
+</div>
+
+<h3 id="method-3-traditional-local-development">Method 3: Traditional Local Development</h3>
+
+<p>If you prefer to install Jekyll directly:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="rouge-code"><pre><span class="c"># Clone your fork</span>
+git clone https://github.com/yourusername/docs-template.git
+<span class="nb">cd </span>docs-template
+
+<span class="c"># Install dependencies</span>
+bundle <span class="nb">install</span>
+
+<span class="c"># Run locally</span>
+bundle <span class="nb">exec </span>jekyll serve
+
+<span class="c"># Open http://localhost:4000 in your browser</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h2 id="first-steps">First Steps</h2>
+
+<p>Once your site is running, here are the first things you should do:</p>
+
+<h3 id="1-configure-your-site">1. Configure Your Site</h3>
+
+<p>Edit <code class="language-plaintext highlighter-rouge">_config.yml</code> to customize your site:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="na">title</span><span class="pi">:</span> <span class="s">My Documentation</span>
+<span class="na">description</span><span class="pi">:</span> <span class="s">Documentation for my awesome project</span>
+<span class="na">theme_color</span><span class="pi">:</span> <span class="s2">"</span><span class="s">blue"</span> <span class="c1"># Choose your color palette</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="2-add-your-first-page">2. Add Your First Page</h3>
+
+<p>Create a new file in the <code class="language-plaintext highlighter-rouge">_docs</code> folder:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</pre></td><td class="rouge-code"><pre><span class="nn">---</span>
+<span class="na">layout</span><span class="pi">:</span> <span class="s">doc</span>
+<span class="na">title</span><span class="pi">:</span> <span class="s">My First Page</span>
+<span class="na">description</span><span class="pi">:</span> <span class="s">This is my first documentation page</span>
+<span class="na">tags</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">example</span><span class="pi">]</span>
+<span class="na">order</span><span class="pi">:</span> <span class="m">1</span>
+<span class="na">section</span><span class="pi">:</span> <span class="s">Getting Started</span>
+<span class="nn">---</span>
+
+<span class="c1"># My First Page</span>
+
+<span class="s">Your content goes here...</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="3-customize-navigation">3. Customize Navigation</h3>
+
+<p>Update the navigation in <code class="language-plaintext highlighter-rouge">_config.yml</code>:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="na">navigation</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s">Home</span>
+    <span class="na">url</span><span class="pi">:</span> <span class="s">/</span>
+  <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s">Docs</span>
+    <span class="na">url</span><span class="pi">:</span> <span class="s">/docs/</span>
+  <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s">About</span>
+    <span class="na">url</span><span class="pi">:</span> <span class="s">/about/</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="4-choose-a-color-palette">4. Choose a Color Palette</h3>
+
+<p>The template includes 10 beautiful color palettes. Try them out by clicking the palette icon in the header!</p>
+
+<div class="alert alert-info">
+  <strong>Tip:</strong> You can set a default palette in <code>_config.yml</code> with the <code>theme_color</code> setting.
+</div>
+
+<h2 id="whats-next">What’s Next?</h2>
+
+<p>Now that you have your documentation site running, explore these resources:</p>
+
+<ul class="list-arrow">
+  <li><a href="/docs/writing/">Writing Documentation</a> - Learn about Markdown features and components</li>
+  <li><a href="/docs/customization/">Customization Guide</a> - Make the template your own</li>
+  <li><a href="/docs/components/">Components Reference</a> - See all available components</li>
+  <li><a href="/docs/deployment/">Deployment Guide</a> - Deploy to custom domains</li>
+</ul>
+
+<div class="alert alert-success">
+  <strong>Success!</strong> You're ready to start creating beautiful documentation.
+</div>
+
+  </div>
+</div>
+<div class="sidebar-overlay" id="sidebar-overlay"></div>
+        </nav>
+    </aside>
+    
+    
+    <!-- Content -->
+    <article class="doc-content">
+        <!-- Breadcrumbs -->
+        
+
+
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <ol class="breadcrumb-list">
+    <li class="breadcrumb-item">
+      <a href="/">
+        <i class="fas fa-home breadcrumb-home"></i>
+        <span class="sr-only">Home</span>
+      </a>
+    </li>
+    
+    
+    
+      
+    
+      
+        
+        <li class="breadcrumb-item">
+          <a href="/docs/">Docs</a>
+        </li>
+      
+    
+      
+        <li class="breadcrumb-item active" aria-current="page">
+          Getting Started
+        </li>
+      
+    
+  </ol>
+</nav>
+
+        
+        <!-- Page Header -->
+        <header class="doc-header">
+            <h1 class="doc-title">Getting Started</h1>
+            
+            <p class="doc-description">Quick start guide to get your documentation site up and running</p>
+            
+            
+            
+            <div class="doc-tags">
+                
+                <span class="tag">tutorial</span>
+                
+                <span class="tag">beginner</span>
+                
+            </div>
+            
+        </header>
+        
+        <!-- Table of Contents -->
+        
+        <div class="doc-toc">
+            <h2 class="toc-title">On this page</h2>
+            <nav class="toc-nav" id="toc-nav"></nav>
+        </div>
+        
+        
+        <!-- Main Content -->
+        <div class="doc-body">
+            <h1 id="getting-started">Getting Started</h1>
+
+<p>Welcome to the Modern Documentation Template! This guide will help you get your documentation site up and running in just a few minutes.</p>
+
+<h2 id="prerequisites">Prerequisites</h2>
+
+<p>Before you begin, make sure you have:</p>
+
+<ul class="list-check">
+  <li>A GitHub account</li>
+  <li>Basic knowledge of Markdown</li>
+  <li>A text editor (VS Code, Sublime Text, etc.)</li>
+</ul>
+
+<p>For local development (optional):</p>
+<ul>
+  <li>Ruby 2.5.0 or higher</li>
+  <li>RubyGems</li>
+  <li>GCC and Make</li>
+</ul>
+
+<h2 id="installation">Installation</h2>
+
+<h3 id="method-1-using-github-pages-recommended">Method 1: Using GitHub Pages (Recommended)</h3>
+
+<div class="steps">
+  <div class="step">
+    <div class="step-indicator">1</div>
+    <div class="step-connector"></div>
+    <div class="step-content">
+      <h3 class="step-title">Fork the Repository</h3>
+      <p class="step-description">Click the "Fork" button on the repository page to create your own copy.</p>
+    </div>
+  </div>
+  
+  <div class="step">
+    <div class="step-indicator">2</div>
+    <div class="step-connector"></div>
+    <div class="step-content">
+      <h3 class="step-title">Enable GitHub Pages</h3>
+      <p class="step-description">Go to Settings → Pages and configure the source branch.</p>
+    </div>
+  </div>
+  
+  <div class="step">
+    <div class="step-indicator">3</div>
+    <div class="step-content">
+      <h3 class="step-title">Access Your Site</h3>
+      <p class="step-description">Your site will be available at https://[username].github.io/[repository-name]/</p>
+    </div>
+  </div>
+</div>
+
+<h3 id="method-2-local-development-with-docker-recommended">Method 2: Local Development with Docker (Recommended)</h3>
+
+<p><strong>No installation required!</strong> Use Docker for a clean development environment:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="rouge-code"><pre><span class="c"># Clone your fork</span>
+git clone https://github.com/yourusername/docs-template.git
+<span class="nb">cd </span>docs-template
+
+<span class="c"># Start with Docker Compose</span>
+docker-compose up
+
+<span class="c"># Open http://localhost:4000 in your browser</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<div class="alert alert-info">
+  <strong>Why Docker?</strong> No need to install Ruby, Jekyll, or any dependencies. Everything runs in an isolated container, keeping your system clean.
+</div>
+
+<h3 id="method-3-traditional-local-development">Method 3: Traditional Local Development</h3>
+
+<p>If you prefer to install Jekyll directly:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="rouge-code"><pre><span class="c"># Clone your fork</span>
+git clone https://github.com/yourusername/docs-template.git
+<span class="nb">cd </span>docs-template
+
+<span class="c"># Install dependencies</span>
+bundle <span class="nb">install</span>
+
+<span class="c"># Run locally</span>
+bundle <span class="nb">exec </span>jekyll serve
+
+<span class="c"># Open http://localhost:4000 in your browser</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h2 id="first-steps">First Steps</h2>
+
+<p>Once your site is running, here are the first things you should do:</p>
+
+<h3 id="1-configure-your-site">1. Configure Your Site</h3>
+
+<p>Edit <code class="language-plaintext highlighter-rouge">_config.yml</code> to customize your site:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="na">title</span><span class="pi">:</span> <span class="s">My Documentation</span>
+<span class="na">description</span><span class="pi">:</span> <span class="s">Documentation for my awesome project</span>
+<span class="na">theme_color</span><span class="pi">:</span> <span class="s2">"</span><span class="s">blue"</span> <span class="c1"># Choose your color palette</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="2-add-your-first-page">2. Add Your First Page</h3>
+
+<p>Create a new file in the <code class="language-plaintext highlighter-rouge">_docs</code> folder:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</pre></td><td class="rouge-code"><pre><span class="nn">---</span>
+<span class="na">layout</span><span class="pi">:</span> <span class="s">doc</span>
+<span class="na">title</span><span class="pi">:</span> <span class="s">My First Page</span>
+<span class="na">description</span><span class="pi">:</span> <span class="s">This is my first documentation page</span>
+<span class="na">tags</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">example</span><span class="pi">]</span>
+<span class="na">order</span><span class="pi">:</span> <span class="m">1</span>
+<span class="na">section</span><span class="pi">:</span> <span class="s">Getting Started</span>
+<span class="nn">---</span>
+
+<span class="c1"># My First Page</span>
+
+<span class="s">Your content goes here...</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="3-customize-navigation">3. Customize Navigation</h3>
+
+<p>Update the navigation in <code class="language-plaintext highlighter-rouge">_config.yml</code>:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="na">navigation</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s">Home</span>
+    <span class="na">url</span><span class="pi">:</span> <span class="s">/</span>
+  <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s">Docs</span>
+    <span class="na">url</span><span class="pi">:</span> <span class="s">/docs/</span>
+  <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s">About</span>
+    <span class="na">url</span><span class="pi">:</span> <span class="s">/about/</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="4-choose-a-color-palette">4. Choose a Color Palette</h3>
+
+<p>The template includes 10 beautiful color palettes. Try them out by clicking the palette icon in the header!</p>
+
+<div class="alert alert-info">
+  <strong>Tip:</strong> You can set a default palette in <code>_config.yml</code> with the <code>theme_color</code> setting.
+</div>
+
+<h2 id="whats-next">What’s Next?</h2>
+
+<p>Now that you have your documentation site running, explore these resources:</p>
+
+<ul class="list-arrow">
+  <li><a href="/docs/writing/">Writing Documentation</a> - Learn about Markdown features and components</li>
+  <li><a href="/docs/customization/">Customization Guide</a> - Make the template your own</li>
+  <li><a href="/docs/components/">Components Reference</a> - See all available components</li>
+  <li><a href="/docs/deployment/">Deployment Guide</a> - Deploy to custom domains</li>
+</ul>
+
+<div class="alert alert-success">
+  <strong>Success!</strong> You're ready to start creating beautiful documentation.
+</div>
+
+        </div>
+        
+        <!-- Page Navigation -->
+        
+
+
+
+  
+    
+    
+
+
+  
+  
+  
+  <nav class="page-nav" aria-label="Page navigation">
+    
+      <div></div>
+    
+    
+    
+      
+      <a href="/docs/components/" class="page-nav-item next">
+        <span class="page-nav-label">
+          Next
+          <i class="fas fa-arrow-right page-nav-arrow"></i>
+        </span>
+        <span class="page-nav-title">Components Showcase</span>
+      </a>
+    
+  </nav>
+
+
+
+    </article>
+</div>
+        </main>
+        
+        <!-- Footer -->
+        <footer class="site-footer">
+            <div class="footer-container">
+                <div class="footer-content">
+                    <p>&copy; 2025 Modern Documentation. Built with Jekyll and GitHub Pages.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+    <!-- Scripts -->
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
+    <script src="/assets/js/search.js"></script>
+    <script src="/assets/js/theme.js"></script>
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>

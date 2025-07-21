@@ -1,0 +1,166 @@
+// List styles
+
+.doc-body {
+  // Unordered lists
+  ul {
+    list-style: none;
+    padding-left: map-get($spacers, 6);
+    
+    li {
+      position: relative;
+      margin-bottom: map-get($spacers, 2);
+      
+      &::before {
+        content: '•';
+        position: absolute;
+        left: -1.5rem;
+        color: var(--color-primary-500);
+        font-weight: map-get($font-weights, 'bold');
+      }
+    }
+    
+    // Nested lists
+    ul {
+      margin-top: map-get($spacers, 2);
+      margin-bottom: map-get($spacers, 2);
+      
+      li::before {
+        content: '○';
+      }
+      
+      ul li::before {
+        content: '▪';
+        font-size: 0.8em;
+      }
+    }
+  }
+  
+  // Ordered lists
+  ol {
+    list-style: none;
+    padding-left: map-get($spacers, 6);
+    counter-reset: list-counter;
+    
+    li {
+      position: relative;
+      margin-bottom: map-get($spacers, 2);
+      counter-increment: list-counter;
+      
+      &::before {
+        content: counter(list-counter) '.';
+        position: absolute;
+        left: -2rem;
+        color: var(--color-primary-600);
+        font-weight: map-get($font-weights, 'semibold');
+        font-feature-settings: 'tnum';
+      }
+    }
+    
+    // Nested ordered lists
+    ol {
+      margin-top: map-get($spacers, 2);
+      margin-bottom: map-get($spacers, 2);
+      counter-reset: nested-counter;
+      
+      li {
+        counter-increment: nested-counter;
+        
+        &::before {
+          content: counter(list-counter, lower-alpha) '.';
+        }
+      }
+    }
+  }
+  
+  // Custom list indicators
+  ul.list-check li::before { content: '✓'; color: var(--color-success); }
+  ul.list-arrow li::before { content: '→'; }
+  ul.list-star li::before { content: '★'; color: var(--color-warning); }
+  ul.list-triangle li::before { content: '▶'; font-size: 0.7em; }
+  ul.list-square li::before { content: '■'; font-size: 0.8em; }
+  ul.list-diamond li::before { content: '◆'; }
+  
+  // Task lists
+  .task-list {
+    list-style: none;
+    padding-left: 0;
+    
+    .task-list-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: map-get($spacers, 2);
+      
+      &::before {
+        display: none;
+      }
+      
+      input[type="checkbox"] {
+        margin-right: map-get($spacers, 2);
+        margin-top: 0.25em;
+        cursor: pointer;
+        
+        &:checked + label {
+          text-decoration: line-through;
+          color: var(--color-text-tertiary);
+        }
+      }
+      
+      label {
+        cursor: pointer;
+        flex: 1;
+      }
+    }
+  }
+  
+  // Definition lists
+  dl {
+    dt {
+      font-weight: map-get($font-weights, 'semibold');
+      color: var(--color-text);
+      margin-bottom: map-get($spacers, 1);
+      
+      &::after {
+        content: ':';
+      }
+    }
+    
+    dd {
+      margin-left: map-get($spacers, 6);
+      margin-bottom: map-get($spacers, 4);
+      color: var(--color-text-secondary);
+      
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+  
+  // Compact lists
+  .list-compact {
+    li {
+      margin-bottom: map-get($spacers, 1);
+    }
+  }
+  
+  // Inline lists
+  .list-inline {
+    display: flex;
+    flex-wrap: wrap;
+    gap: map-get($spacers, 4);
+    padding-left: 0;
+    
+    li {
+      margin-bottom: 0;
+      
+      &::before {
+        display: none;
+      }
+      
+      &:not(:last-child)::after {
+        content: '•';
+        margin-left: map-get($spacers, 4);
+        color: var(--color-text-tertiary);
+      }
+    }
+  }
+}

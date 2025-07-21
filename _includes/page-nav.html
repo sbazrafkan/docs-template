@@ -1,0 +1,49 @@
+{% assign docs = site.docs | sort: 'order' %}
+{% assign current_index = nil %}
+
+{% for doc in docs %}
+  {% if doc.url == page.url %}
+    {% assign current_index = forloop.index0 %}
+    {% break %}
+  {% endif %}
+{% endfor %}
+
+{% if current_index %}
+  {% assign prev_index = current_index | minus: 1 %}
+  {% assign next_index = current_index | plus: 1 %}
+  
+  <nav class="page-nav" aria-label="Page navigation">
+    {% if prev_index >= 0 %}
+      {% assign prev_doc = docs[prev_index] %}
+      <a href="{{ prev_doc.url | relative_url }}" class="page-nav-item prev">
+        <span class="page-nav-label">
+          <i class="fas fa-arrow-left page-nav-arrow prev"></i>
+          Previous
+        </span>
+        <span class="page-nav-title">{{ prev_doc.nav_title | default: prev_doc.title }}</span>
+      </a>
+    {% else %}
+      <div></div>
+    {% endif %}
+    
+    {% if next_index < docs.size %}
+      {% assign next_doc = docs[next_index] %}
+      <a href="{{ next_doc.url | relative_url }}" class="page-nav-item next">
+        <span class="page-nav-label">
+          Next
+          <i class="fas fa-arrow-right page-nav-arrow"></i>
+        </span>
+        <span class="page-nav-title">{{ next_doc.nav_title | default: next_doc.title }}</span>
+      </a>
+    {% endif %}
+  </nav>
+{% endif %}
+
+{% if site.github.repository_url %}
+<div class="page-edit">
+  <a href="{{ site.github.repository_url }}/edit/main/{{ page.path }}" target="_blank" rel="noopener">
+    <i class="fas fa-edit"></i>
+    Edit this page on GitHub
+  </a>
+</div>
+{% endif %}
