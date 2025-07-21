@@ -3702,6 +3702,25 @@ body[data-theme="dark"]::after {
   border: 1px solid var(--color-border);
   border-radius: 12px;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.doc-body figure {
+  margin: 1.5rem 0;
+  text-align: center;
+}
+
+.doc-body figure img {
+  margin: 0 auto 0.75rem;
+}
+
+.doc-body figure figcaption {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+  font-style: italic;
+  margin-top: 0.5rem;
 }
 
 .doc-body table {
@@ -5996,5 +6015,3 @@ body[data-palette="slate"] {
     page-break-inside: avoid !important;
   }
 }
-
-/*# sourceMappingURL=main.css.map */

@@ -181,7 +181,7 @@
     }
     
     figcaption {
-      font-size: $font-size-sm;
+      font-size: map-get($font-sizes, 'sm');
       color: var(--color-text-secondary);
       font-style: italic;
       margin-top: map-get($spacers, 2);
