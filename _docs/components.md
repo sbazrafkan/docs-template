@@ -360,12 +360,12 @@ npm run build
 
 ### Regular Image
 
-![Placeholder Image](https://via.placeholder.com/800x400)
+![Placeholder Image]({{ '/assets/images/placeholder.svg' | relative_url }})
 
 ### Image with Caption
 
 <figure>
-  <img src="https://via.placeholder.com/800x400" alt="Placeholder">
+  <img src="{{ '/assets/images/placeholder.svg' | relative_url }}" alt="Placeholder">
   <figcaption>This is an image caption describing the image above.</figcaption>
 </figure>
 
