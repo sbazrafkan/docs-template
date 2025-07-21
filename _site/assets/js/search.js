@@ -9,7 +9,8 @@
   // Initialize search
   function initSearch() {
     // Load search data
-    fetch('/search.json')
+    const baseUrl = document.querySelector('meta[name="base-url"]')?.content || '';
+    fetch(baseUrl + '/search.json')
       .then(response => response.json())
       .then(data => {
         searchData = data;

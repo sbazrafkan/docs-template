@@ -1,8 +1,8 @@
 # Site settings
 title: Modern Documentation
 description: A beautiful, modern documentation template for GitHub Pages
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site
+baseurl: "/docs-template" # the subpath of your site, e.g. /blog
+url: "https://sbazrafkan.github.io" # the base hostname & protocol for your site
 
 # Build settings
 markdown: kramdown
