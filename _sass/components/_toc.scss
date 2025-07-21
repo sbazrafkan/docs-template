@@ -1,11 +1,16 @@
 // Table of Contents styles
 
 .toc {
-  background-color: var(--color-bg-secondary);
-  border: 1px solid var(--color-border);
+  background-color: var(--color-toc-bg);
+  border: 1px solid rgba(var(--color-primary-500-rgb), 0.15);
   border-radius: $border-radius-lg;
   padding: map-get($spacers, 4);
   margin-bottom: map-get($spacers, 6);
+  
+  [data-theme="dark"] & {
+    background-color: var(--color-toc-bg-dark);
+    border-color: rgba(var(--color-primary-500-rgb), 0.25);
+  }
   
   @media (min-width: map-get($breakpoints, 'xl')) {
     position: sticky;
@@ -75,8 +80,12 @@
     ul {
       margin-left: map-get($spacers, 3);
       padding-left: map-get($spacers, 2);
-      border-left: 1px solid var(--color-border);
+      border-left: 1px solid rgba(var(--color-primary-500-rgb), 0.15);
       margin-top: map-get($spacers, 1);
+      
+      [data-theme="dark"] & {
+        border-left-color: rgba(var(--color-primary-500-rgb), 0.25);
+      }
     }
   }
   

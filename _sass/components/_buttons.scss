@@ -47,13 +47,24 @@
   
   // Secondary button
   &.btn-secondary {
-    color: var(--color-text);
-    background-color: var(--color-bg-secondary);
-    border-color: var(--color-border);
+    color: var(--color-primary-700);
+    background-color: var(--color-primary-100);
+    border-color: var(--color-primary-200);
+    
+    [data-theme="dark"] & {
+      color: var(--color-primary-300);
+      background-color: rgba(var(--color-primary-500-rgb), 0.2);
+      border-color: rgba(var(--color-primary-500-rgb), 0.3);
+    }
     
     &:hover:not(:disabled) {
-      background-color: var(--color-bg-tertiary);
-      border-color: var(--color-border-secondary);
+      background-color: var(--color-primary-200);
+      border-color: var(--color-primary-300);
+      
+      [data-theme="dark"] & {
+        background-color: rgba(var(--color-primary-500-rgb), 0.3);
+        border-color: rgba(var(--color-primary-500-rgb), 0.4);
+      }
     }
   }
   
@@ -136,27 +147,54 @@
 // Button group
 .btn-group {
   display: inline-flex;
+  background-color: rgba(var(--color-primary-500-rgb), 0.1);
+  border-radius: $border-radius;
+  padding: 2px;
+  
+  [data-theme="dark"] & {
+    background-color: rgba(var(--color-primary-500-rgb), 0.2);
+  }
   
   .btn {
-    border-radius: 0;
+    border-radius: calc(#{$border-radius} - 2px);
+    margin: 0 1px;
+    background-color: transparent;
+    border-color: transparent;
+    color: var(--color-primary-700);
+    
+    [data-theme="dark"] & {
+      color: var(--color-primary-300);
+    }
     
     &:first-child {
-      border-top-left-radius: $border-radius;
-      border-bottom-left-radius: $border-radius;
+      margin-left: 0;
     }
     
     &:last-child {
-      border-top-right-radius: $border-radius;
-      border-bottom-right-radius: $border-radius;
+      margin-right: 0;
     }
     
     &:not(:first-child) {
-      margin-left: -2px;
+      margin-left: 1px;
     }
     
-    &:hover,
-    &:focus {
+    &:hover:not(:disabled),
+    &:focus:not(:disabled) {
+      background-color: rgba(var(--color-primary-500-rgb), 0.2);
       z-index: 1;
+      
+      [data-theme="dark"] & {
+        background-color: rgba(var(--color-primary-500-rgb), 0.3);
+      }
+    }
+    
+    &.active {
+      background-color: var(--color-primary-600);
+      color: white;
+      
+      &:hover:not(:disabled) {
+        background-color: var(--color-primary-700);
+      }
     }
   }
 }

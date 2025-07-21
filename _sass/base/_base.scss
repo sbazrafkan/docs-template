@@ -10,8 +10,7 @@ body {
   font-size: 1rem;
   line-height: $line-height-base;
   color: var(--color-text);
-  background-color: var(--color-bg);
-  transition: background-color $transition-base, color $transition-base;
+  transition: color $transition-base;
 }
 
 // Selection
@@ -67,15 +66,8 @@ img {
   border-radius: $border-radius;
 }
 
-// Code
-code {
-  font-family: $font-family-mono;
-  font-size: 0.875em;
-  background-color: var(--color-bg-tertiary);
-  padding: 0.125em 0.25em;
-  border-radius: $border-radius-sm;
-}
-
+// Code - moved to components/_code.scss for better organization
+// Keeping only the pre code reset here
 pre code {
   background-color: transparent;
   padding: 0;

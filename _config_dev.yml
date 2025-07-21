@@ -13,3 +13,6 @@ verbose: true
 # Don't minify in development
 sass:
   style: expanded
+
+# Disable LiveReload to avoid WebSocket errors
+livereload: false

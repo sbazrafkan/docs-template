@@ -22,6 +22,7 @@
   // Apply theme
   function applyTheme(theme) {
     document.documentElement.setAttribute('data-theme', theme);
+    document.body.setAttribute('data-theme', theme);
     localStorage.setItem('theme', theme);
   }
 
@@ -31,12 +32,13 @@
     localStorage.setItem('palette', palette);
   }
 
-  // Initialize theme immediately
-  applyTheme(getSavedTheme());
+  // Initialize theme on documentElement immediately
+  document.documentElement.setAttribute('data-theme', getSavedTheme());
 
   // Theme toggle
   document.addEventListener('DOMContentLoaded', function() {
-    // Apply palette after DOM is ready
+    // Apply theme to body and palette after DOM is ready
+    applyTheme(getSavedTheme());
     applyPalette(getSavedPalette());
     const themeToggle = document.querySelector('.theme-toggle');
     if (themeToggle) {
